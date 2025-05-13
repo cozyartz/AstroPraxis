@@ -1,0 +1,44 @@
+---
+import { FontAwesomeIcon } from "@fortawesome/astro-fontawesome";
+import { faStar, faRocket } from "@fortawesome/pro-solid-svg-icons";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AstroPraxis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body class="bg-white text-gray-800 font-sans">
+    <header class="p-6 bg-black text-white flex justify-between items-center">
+      <h1 class="text-2xl font-bold">AstroPraxis</h1>
+      <nav class="space-x-4">
+        <a href="/" class="hover:underline">Home</a>
+        <a href="/about" class="hover:underline">About</a>
+      </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-10">
+      <h2 class="text-4xl font-bold mb-4">Guiding Organizations Toward Transformative Impact</h2>
+      <p class="text-lg mb-6">AstroPraxis is a Michigan-based consulting collective centering equity, systems strategy, and radical transformation.</p>
+
+      <section class="grid md:grid-cols-2 gap-6 mt-10">
+        <div class="bg-gray-100 p-6 rounded-xl shadow-md">
+          <FontAwesomeIcon icon={faStar} class="text-indigo-600 text-3xl mb-2" />
+          <h3 class="text-xl font-semibold">Systems & Strategy</h3>
+          <p>We help organizations reimagine structures to align with core values and long-term visions.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-xl shadow-md">
+          <FontAwesomeIcon icon={faRocket} class="text-pink-600 text-3xl mb-2" />
+          <h3 class="text-xl font-semibold">Equity Consulting</h3>
+          <p>Deep equity and trauma-informed work rooted in lived experience and critical theory.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="p-6 text-center text-sm text-gray-500 mt-10">
+      © 2025 AstroPraxis · Michigan-based · All rights reserved
+    </footer>
+  </body>
+</html>

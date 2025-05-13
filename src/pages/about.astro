@@ -1,0 +1,60 @@
+---
+const team = [
+  {
+    name: "Andrea Cozart Lundin",
+    url: "https://www.linkedin.com/in/andrea-cozart-lundin/",
+  },
+  {
+    name: "Amy Cozart Lundin",
+    url: "https://www.linkedin.com/in/amycozartlundin/",
+  },
+  {
+    name: "Kyla Kremhelmer",
+    url: "https://www.linkedin.com/in/kyla-kremhelmer-54972b137/",
+  },
+  {
+    name: "Nicole Hoffman",
+    url: "https://www.linkedin.com/in/nicolemhoffman/",
+  },
+  {
+    name: "Rebecca Judkins",
+    url: "https://www.linkedin.com/in/rebecca-judkins-65200b171/",
+  }
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About | AstroPraxis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body class="bg-white text-gray-800 font-sans">
+    <header class="p-6 bg-black text-white flex justify-between items-center">
+      <h1 class="text-2xl font-bold">AstroPraxis</h1>
+      <nav class="space-x-4">
+        <a href="/" class="hover:underline">Home</a>
+        <a href="/about" class="hover:underline">About</a>
+      </nav>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-10">
+      <h2 class="text-3xl font-bold mb-4">Meet Our Team</h2>
+      <p class="mb-6">AstroPraxis is powered by a diverse group of consultants, facilitators, and transformation strategists committed to equity, justice, and sustainable impact. For contact, reach us at <strong class="text-indigo-700">269.222.4330</strong>.</p>
+      <div class="grid gap-6 md:grid-cols-2">
+        {team.map(person => (
+          <div class="border border-gray-200 p-4 rounded-lg shadow hover:shadow-md transition">
+            <a href={person.url} target="_blank" rel="noopener noreferrer" class="text-xl font-semibold text-indigo-700 hover:underline">
+              {person.name}
+            </a>
+          </div>
+        ))}
+      </div>
+    </main>
+
+    <footer class="p-6 text-center text-sm text-gray-500 mt-10">
+      © 2025 AstroPraxis · Michigan-based · All rights reserved
+    </footer>
+  </body>
+</html>
