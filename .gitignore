@@ -7,23 +7,26 @@ dist/
 # Astro cache
 .astro/
 
-# Local environment variables
+# Environment variables
 .env
 .env.local
 .env.*.local
 
-# Mac system files
-.DS_Store
-
-# npm logs
+# NPM logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# IDE/editor folders
+# macOS files
+.DS_Store
+
+# IDE/editor settings
 .vscode/
 .idea/
 
-# Optional: if using pnpm or yarn
+# Optional for pnpm/yarn users
 .pnpm-store/
 .yarn/
+
+# Font Awesome Auth
+.npmrc
