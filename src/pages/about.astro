@@ -56,7 +56,7 @@ const team = [
 ---
 
 <BaseLayout title="About Us | AstroPraxis">
-  <section class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center">
+  <section class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center fade-in opacity-0 translate-y-6">
     <div class="max-w-3xl mx-auto">
       <h1 class="text-4xl font-bold mb-4">The AstroPraxis Collective</h1>
       <p class="text-lg text-gray-400">
@@ -66,10 +66,10 @@ const team = [
     </div>
   </section>
 
-  <section class="py-16 px-6 bg-black text-white">
+  <section class="py-16 px-6 bg-black text-white fade-in opacity-0 translate-y-6">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
       {team.map(person => (
-        <div class="bg-gray-900 border border-indigo-700 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition group">
+        <div class="bg-gray-900 border border-indigo-700 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition group fade-in opacity-0 translate-y-6">
           <div class="flex items-center space-x-4 mb-4">
             <img src={person.image} alt={person.name} class="w-20 h-20 rounded-full object-cover border-2 border-indigo-500 shadow-sm" />
             <div class="text-left">
@@ -85,8 +85,8 @@ const team = [
               </a>
             )}
             {person.links.website && (
-              <a href={person.links.website} target="_blank" title="Personal Website">
-                <i class="fas fa-globe"></i>
+              <a href={person.links.website} target="_blank" title="Website">
+                <i class="fa-sharp fa-solid fa-globe"></i>
               </a>
             )}
             {person.links.github && (
@@ -95,8 +95,8 @@ const team = [
               </a>
             )}
             {person.links.linkhub && (
-              <a href={person.links.linkhub} target="_blank" title="Linkhub">
-                <i class="fas fa-link"></i>
+              <a href={person.links.linkhub} target="_blank" title="Link Hub">
+                <i class="fa-sharp fa-solid fa-link"></i>
               </a>
             )}
           </div>
