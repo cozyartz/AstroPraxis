@@ -11,10 +11,13 @@ const { title = "AstroPraxis" } = Astro.props;
     <!-- Global Styles -->
     <link rel="stylesheet" href="/styles/global.css" />
 
-    <!-- Font Awesome Pro -->
+    <!-- Font Awesome Pro CDN (Duotone, Sharp, etc.) -->
     <script src="https://kit.fontawesome.com/8a91e67263.js" crossorigin="anonymous"></script>
-    <script type="module" src="/site.js"></script>
+
+    <!-- Client-side JS for scroll animations -->
+    <script type="module" src="/scripts/site.js"></script>
   </head>
+
   <body class="bg-black text-white font-sans leading-relaxed">
     <header class="p-6 bg-black flex justify-between items-center shadow-md">
       <h1 class="text-xl font-bold tracking-tight">AstroPraxis</h1>
@@ -35,4 +38,3 @@ const { title = "AstroPraxis" } = Astro.props;
     </footer>
   </body>
 </html>
-
