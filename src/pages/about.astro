@@ -1,60 +1,107 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
 const team = [
   {
     name: "Andrea Cozart Lundin",
-    url: "https://www.linkedin.com/in/andrea-cozart-lundin/",
+    role: "Creative Director & Spatial Strategist",
+    bio: "FAA-certified drone pilot, multimedia strategist, and narrative systems thinker. Andrea leads creative direction across visual storytelling, site-based media, and spatial impact design.",
+    image: "/images/andrea.jpg",
+    links: {
+      linkedin: "https://www.linkedin.com/in/andrea-cozart-lundin/",
+      website: "https://andreacozart.me",
+      github: "https://github.com/cozyartz",
+      linkhub: "https://link.andreacozart.me"
+    }
   },
   {
     name: "Amy Cozart Lundin",
-    url: "https://www.linkedin.com/in/amycozartlundin/",
+    role: "Learning Architect & Accessibility Designer",
+    bio: "Instructional designer and accessibility nerd. Amy builds inclusive learning systems and leads strategic training for organizations rethinking how people grow.",
+    image: "/images/amy.jpg",
+    links: {
+      linkedin: "https://www.linkedin.com/in/amycozartlundin/",
+      website: "https://amylundin.me",
+      github: "https://github.com/grammar-nerd/grammar-nerd"
+    }
   },
   {
     name: "Kyla Kremhelmer",
-    url: "https://www.linkedin.com/in/kyla-kremhelmer-54972b137/",
+    role: "Rehabilitation & Disability Consultant",
+    bio: "Kyla works at the intersection of rehabilitation, trauma-informed practice, and accessibility, helping clients navigate complex systems with clarity and support.",
+    image: "/images/kyla.jpg",
+    links: {
+      linkedin: "https://www.linkedin.com/in/kyla-kremhelmer-54972b137/"
+    }
   },
   {
     name: "Nicole Hoffman",
-    url: "https://www.linkedin.com/in/nicolemhoffman/",
+    role: "International Education Advisor",
+    bio: "Nicole brings global education systems expertise, admissions design, and intercultural knowledge to international student engagement and institutional strategy.",
+    image: "/images/nicole.jpg",
+    links: {
+      linkedin: "https://www.linkedin.com/in/nicolemhoffman/"
+    }
   },
   {
     name: "Rebecca Judkins",
-    url: "https://www.linkedin.com/in/rebecca-judkins-65200b171/",
+    role: "Instructional Designer & Technical Writer",
+    bio: "Rebecca turns complex information into accessible, inclusive, and well-structured content. Her work bridges technical clarity and human connection.",
+    image: "/images/rebecca.jpg",
+    links: {
+      linkedin: "https://www.linkedin.com/in/rebecca-judkins-65200b171/"
+    }
   }
 ];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>About | AstroPraxis</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/global.css" />
-  </head>
-  <body class="bg-white text-gray-800 font-sans">
-    <header class="p-6 bg-black text-white flex justify-between items-center">
-      <h1 class="text-2xl font-bold">AstroPraxis</h1>
-      <nav class="space-x-4">
-        <a href="/" class="hover:underline">Home</a>
-        <a href="/about" class="hover:underline">About</a>
-      </nav>
-    </header>
+<BaseLayout title="About Us | AstroPraxis">
+  <section class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-4">The AstroPraxis Collective</h1>
+      <p class="text-lg text-gray-400">
+        We are a constellation of educators, tech strategists, systems thinkers, and equity workers.
+        Together, we help communities and orgs design what’s next — and do it with integrity.
+      </p>
+    </div>
+  </section>
 
-    <main class="max-w-3xl mx-auto px-4 py-10">
-      <h2 class="text-3xl font-bold mb-4">Meet Our Team</h2>
-      <p class="mb-6">AstroPraxis is powered by a diverse group of consultants, facilitators, and transformation strategists committed to equity, justice, and sustainable impact. For contact, reach us at <strong class="text-indigo-700">269.222.4330</strong>.</p>
-      <div class="grid gap-6 md:grid-cols-2">
-        {team.map(person => (
-          <div class="border border-gray-200 p-4 rounded-lg shadow hover:shadow-md transition">
-            <a href={person.url} target="_blank" rel="noopener noreferrer" class="text-xl font-semibold text-indigo-700 hover:underline">
-              {person.name}
-            </a>
+  <section class="py-16 px-6 bg-black text-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {team.map(person => (
+        <div class="bg-gray-900 border border-indigo-700 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition group">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src={person.image} alt={person.name} class="w-20 h-20 rounded-full object-cover border-2 border-indigo-500 shadow-sm" />
+            <div class="text-left">
+              <h2 class="text-xl font-semibold">{person.name}</h2>
+              <p class="text-indigo-400 text-sm">{person.role}</p>
+            </div>
           </div>
-        ))}
-      </div>
-    </main>
-
-    <footer class="p-6 text-center text-sm text-gray-500 mt-10">
-      © 2025 AstroPraxis · Michigan-based · All rights reserved
-    </footer>
-  </body>
-</html>
+          <p class="text-gray-300 text-sm mb-4">{person.bio}</p>
+          <div class="flex space-x-4 text-indigo-300 text-lg">
+            {person.links.linkedin && (
+              <a href={person.links.linkedin} target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            )}
+            {person.links.website && (
+              <a href={person.links.website} target="_blank" title="Personal Website">
+                <i class="fas fa-globe"></i>
+              </a>
+            )}
+            {person.links.github && (
+              <a href={person.links.github} target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            )}
+            {person.links.linkhub && (
+              <a href={person.links.linkhub} target="_blank" title="Linkhub">
+                <i class="fas fa-link"></i>
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
