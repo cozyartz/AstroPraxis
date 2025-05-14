@@ -18,4 +18,4 @@ AstroPraxis is a multidisciplinary consultancy rooted in systems thinking, equit
 
 ---
 
-## 🛠️ Wrangler command: wrangler pages deploy ./dist --project-name=astropraxis-main --branch=main --commit-dirty=true
+## 🛠️ Wrangler command: npx wrangler pages deploy ./dist --project-name=astropraxis
