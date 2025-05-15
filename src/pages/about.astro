@@ -56,9 +56,13 @@ const team = [
 ---
 
 <BaseLayout title="About Us | AstroPraxis">
-  <section class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center fade-in opacity-0 translate-y-6">
+  <section 
+    class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center fade-in opacity-0 translate-y-6"
+    role="region"
+    aria-labelledby="about-heading"
+  >
     <div class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold mb-4">The AstroPraxis Collective</h1>
+      <h1 id="about-heading" class="text-4xl font-bold mb-4">The AstroPraxis Collective</h1>
       <p class="text-lg text-gray-400">
         We are a constellation of educators, tech strategists, systems thinkers, and equity workers.
         Together, we help communities and orgs design what’s next — and do it with integrity.
@@ -66,37 +70,76 @@ const team = [
     </div>
   </section>
 
-  <section class="py-16 px-6 bg-black text-white fade-in opacity-0 translate-y-6">
+  <section 
+    class="py-16 px-6 bg-black text-white fade-in opacity-0 translate-y-6"
+    role="region"
+    aria-label="Team Profiles"
+  >
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
       {team.map(person => (
-        <div class="bg-gray-900 border border-indigo-700 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition group text-center">
-          <img src={person.image} alt={person.name} class="w-24 h-24 mx-auto rounded-full object-cover border-2 border-indigo-500 shadow-sm mb-4" />
-          <h2 class="text-xl font-semibold">{person.name}</h2>
+        <article 
+          class="bg-gray-900 border border-indigo-700 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition group text-center"
+          aria-labelledby={`${person.name.replace(/\s/g, '-').toLowerCase()}-name`}
+        >
+          <img
+            src={person.image}
+            alt={`Portrait of ${person.name}, ${person.role}`}
+            class="w-24 h-24 mx-auto rounded-full object-cover border-2 border-indigo-500 shadow-sm mb-4"
+          />
+          <h2 id={`${person.name.replace(/\s/g, '-').toLowerCase()}-name`} class="text-xl font-semibold">
+            {person.name}
+          </h2>
           <p class="text-indigo-400 text-sm mb-2">{person.role}</p>
           <p class="text-gray-300 text-sm mb-4">{person.bio}</p>
-          <div class="flex justify-center space-x-4 text-indigo-300 text-lg">
-            {person.links.linkedin && (
-              <a href={person.links.linkedin} target="_blank" title="LinkedIn" rel="noopener noreferrer">
-                <i class="fab fa-linkedin"></i>
-              </a>
-            )}
-            {person.links.website && (
-              <a href={person.links.website} target="_blank" title="Website" rel="noopener noreferrer">
-                <i class="fas fa-globe"></i>
-              </a>
-            )}
-            {person.links.github && (
-              <a href={person.links.github} target="_blank" title="GitHub" rel="noopener noreferrer">
-                <i class="fab fa-github"></i>
-              </a>
-            )}
-            {person.links.linkhub && (
-              <a href={person.links.linkhub} target="_blank" title="Link Hub" rel="noopener noreferrer">
-                <i class="fas fa-link"></i>
-              </a>
-            )}
-          </div>
-        </div>
+          <nav aria-label={`Links for ${person.name}`}>
+            <div class="flex justify-center space-x-4 text-indigo-300 text-lg">
+              {person.links.linkedin && (
+                <a
+                  href={person.links.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${person.name} on LinkedIn`}
+                  title="LinkedIn"
+                >
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+              )}
+              {person.links.website && (
+                <a
+                  href={person.links.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${person.name}'s website`}
+                  title="Website"
+                >
+                  <i class="fas fa-globe" aria-hidden="true"></i>
+                </a>
+              )}
+              {person.links.github && (
+                <a
+                  href={person.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${person.name}'s GitHub`}
+                  title="GitHub"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+              )}
+              {person.links.linkhub && (
+                <a
+                  href={person.links.linkhub}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${person.name}'s link hub`}
+                  title="Link Hub"
+                >
+                  <i class="fas fa-link" aria-hidden="true"></i>
+                </a>
+              )}
+            </div>
+          </nav>
+        </article>
       ))}
     </div>
   </section>
