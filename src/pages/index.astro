@@ -36,26 +36,32 @@ const highlights = [
 ---
 
 <BaseLayout title="Home | AstroPraxis">
+  <!-- HERO SECTION -->
   <section
-    class="bg-gradient-to-br from-indigo-950 via-purple-900 to-black text-white py-32 px-6 text-center fade-in opacity-0 translate-y-6"
+    class="bg-gradient-to-br from-indigo-950 via-purple-900 to-black text-white py-32 px-6 text-center animate-fade-in"
     role="region"
     aria-labelledby="hero-heading"
   >
-    <div class="max-w-4xl mx-auto">
-      <h1 id="hero-heading" class="text-5xl font-extrabold leading-tight mb-6 tracking-tight">
+    <div class="max-w-4xl mx-auto prose prose-invert">
+      <h1 id="hero-heading" class="text-5xl font-extrabold leading-tight tracking-tight">
         Strategy for Systems That Actually Work
       </h1>
       <p class="text-lg text-gray-300 mb-8">
-        We’re a collective of women-owned, queer-led consultants, designers, technologists, and facilitators — helping people transform the structures they're in, and build the ones they need.
+        We’re a collective of women-owned, queer-led consultants, designers, technologists, and facilitators —
+        helping people transform the structures they're in, and build the ones they need.
       </p>
-      <a href="/services" class="inline-block bg-white text-black px-6 py-3 rounded-full font-semibold text-sm hover:bg-gray-100 transition focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-white">
+      <a
+        href="/services"
+        class="inline-block bg-white text-black px-6 py-3 rounded-full font-semibold text-sm hover:bg-gray-100 transition focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-white"
+      >
         Explore Our Services
       </a>
     </div>
   </section>
 
+  <!-- WHAT WE OFFER -->
   <section
-    class="py-20 px-6 bg-black text-white fade-in opacity-0 translate-y-6"
+    class="py-20 px-6 bg-black text-white animate-fade-in"
     role="region"
     aria-labelledby="offer-heading"
   >
@@ -65,7 +71,7 @@ const highlights = [
         {highlights.map((h, i) => (
           <article
             key={i}
-            class="bg-gray-900 border border-indigo-700 rounded-xl p-6 shadow hover:shadow-xl transition fade-in opacity-0 translate-y-6"
+            class="bg-gray-900 border border-indigo-700 rounded-xl p-6 shadow hover:shadow-xl transition-all duration-300 animate-fade-in"
             aria-label={h.label}
           >
             <div class="flex items-center space-x-3 mb-3">
@@ -79,15 +85,23 @@ const highlights = [
     </div>
   </section>
 
+  <!-- CTA SECTION -->
   <section
-    class="bg-indigo-700 text-white text-center py-20 px-6 fade-in opacity-0 translate-y-6"
+    class="bg-indigo-700 text-white text-center py-20 px-6 animate-fade-in"
     role="region"
     aria-labelledby="cta-heading"
   >
-    <h2 id="cta-heading" class="text-3xl font-bold mb-4">You're Ready to Build Better</h2>
-    <p class="text-lg mb-6">Tell us where it hurts — or what you’re dreaming of. We’ll meet you with strategy, structure, and soul.</p>
-    <a href="/contact" class="inline-block bg-white text-indigo-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-white">
-      Contact Us
-    </a>
+    <div class="max-w-2xl mx-auto prose prose-invert">
+      <h2 id="cta-heading" class="text-3xl font-bold mb-4">You're Ready to Build Better</h2>
+      <p class="text-lg mb-6">
+        Tell us where it hurts — or what you’re dreaming of. We’ll meet you with strategy, structure, and soul.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-indigo-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-white"
+      >
+        Contact Us
+      </a>
+    </div>
   </section>
 </BaseLayout>

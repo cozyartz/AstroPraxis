@@ -56,8 +56,8 @@ const team = [
 ---
 
 <BaseLayout title="About Us | AstroPraxis">
-  <section 
-    class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center fade-in opacity-0 translate-y-6"
+  <section
+    class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center animate-fade-in"
     role="region"
     aria-labelledby="about-heading"
   >
@@ -70,27 +70,31 @@ const team = [
     </div>
   </section>
 
-  <section 
-    class="py-16 px-6 bg-black text-white fade-in opacity-0 translate-y-6"
+  <section
+    class="py-16 px-6 bg-black text-white animate-fade-in"
     role="region"
     aria-label="Team Profiles"
   >
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
       {team.map(person => (
-        <article 
-          class="bg-gray-900 border border-indigo-700 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition group text-center"
+        <article
+          class="bg-gray-900 border border-indigo-700 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 group text-center animate-fade-in"
           aria-labelledby={`${person.name.replace(/\s/g, '-').toLowerCase()}-name`}
         >
-          <img
-            src={person.image}
-            alt={`Portrait of ${person.name}, ${person.role}`}
-            class="w-24 h-24 mx-auto rounded-full object-cover border-2 border-indigo-500 shadow-sm mb-4"
-          />
+          <div class="aspect-w-1 aspect-h-1 w-24 h-24 mx-auto mb-4">
+            <img
+              src={person.image}
+              alt={`Portrait of ${person.name}, ${person.role}`}
+              class="rounded-full object-cover border-2 border-indigo-500 shadow-sm"
+            />
+          </div>
           <h2 id={`${person.name.replace(/\s/g, '-').toLowerCase()}-name`} class="text-xl font-semibold">
             {person.name}
           </h2>
           <p class="text-indigo-400 text-sm mb-2">{person.role}</p>
-          <p class="text-gray-300 text-sm mb-4">{person.bio}</p>
+          <div class="prose prose-invert text-sm text-gray-300 mx-auto mb-4 max-w-prose">
+            <p>{person.bio}</p>
+          </div>
           <nav aria-label={`Links for ${person.name}`}>
             <div class="flex justify-center space-x-4 text-indigo-300 text-lg">
               {person.links.linkedin && (

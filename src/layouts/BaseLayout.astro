@@ -13,7 +13,7 @@ const { title = "AstroPraxis" } = Astro.props;
     <link rel="icon" href="/favicon.png" type="image/png" />
     <script src="https://kit.fontawesome.com/8a91e67263.js" crossorigin="anonymous"></script>
 
-    <!-- Client-side JS -->
+    <!-- Site-wide JS -->
     <script type="module" src="/scripts/site.js"></script>
   </head>
 
@@ -21,7 +21,10 @@ const { title = "AstroPraxis" } = Astro.props;
     <!-- Header -->
     <header class="bg-black text-white p-6 shadow-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <!-- Logo -->
         <a href="/" class="text-xl font-bold tracking-tight">AstroPraxis</a>
+
+        <!-- Desktop Nav -->
         <nav class="hidden md:flex space-x-6 text-sm">
           <a href="/" class="hover:text-indigo-400 transition">Home</a>
           <a href="/about" class="hover:text-indigo-400 transition">About</a>
@@ -30,21 +33,18 @@ const { title = "AstroPraxis" } = Astro.props;
           <a href="/contact" class="hover:text-indigo-400 transition">Contact</a>
         </nav>
 
-        <!-- Mobile Menu Toggle -->
+        <!-- Mobile Toggle -->
         <button
           id="menu-toggle"
-          class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 p-2 rounded-full hover:bg-indigo-900 transition"
           aria-label="Toggle menu"
         >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
+          <span id="menu-icon" class="text-xl" aria-hidden="true">✴️</span>
         </button>
       </div>
 
       <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden hidden px-6 pt-4 pb-6">
+      <div id="mobile-menu" class="md:hidden hidden px-6 pt-4 pb-6 animate-fade-in">
         <ul class="space-y-4 text-sm">
           <li><a href="/" class="block hover:text-indigo-400 transition">Home</a></li>
           <li><a href="/about" class="block hover:text-indigo-400 transition">About</a></li>
@@ -55,8 +55,8 @@ const { title = "AstroPraxis" } = Astro.props;
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="min-h-screen">
+    <!-- Main Content Slot -->
+    <main class="min-h-screen animate-fade-in">
       <slot />
     </main>
 
@@ -65,13 +65,18 @@ const { title = "AstroPraxis" } = Astro.props;
       © 2025 AstroPraxis · Michigan-based · All rights reserved
     </footer>
 
-    <!-- JS for Mobile Menu Toggle -->
+    <!-- Toggle Script with Random Icon -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuToggle.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+
+        const icons = ['🌟', '✨', '✴️', '☄️', '🪐', '🔮', '🌠', '🛸'];
+        icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
         });
       });
     </script>

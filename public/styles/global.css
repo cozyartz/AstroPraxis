@@ -2,20 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom global styles */
+/* Global tweaks */
 body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  @apply font-sans leading-relaxed text-white bg-black;
 }
 
+/* Heading styles */
 h1, h2, h3 {
-  font-weight: 700;
+  @apply font-bold;
 }
 
+/* Link transitions */
 a {
-  transition: color 0.2s ease;
+  @apply transition-colors duration-200 ease-in-out;
 }
 
 a:hover {
-  color: #818cf8; /* indigo-400 */
+  @apply text-indigo-400;
 }
