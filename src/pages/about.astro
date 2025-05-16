@@ -56,6 +56,7 @@ const team = [
 ---
 
 <BaseLayout title="About Us | AstroPraxis">
+  <!-- Intro Section -->
   <section
     class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center animate-fade-in"
     role="region"
@@ -70,79 +71,51 @@ const team = [
     </div>
   </section>
 
+  <!-- Team Grid -->
   <section
     class="py-16 px-6 bg-black text-white animate-fade-in"
     role="region"
     aria-label="Team Profiles"
   >
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-      {team.map(person => (
+    <div class="max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {team.map((person) => (
         <article
-          class="bg-gray-900 border border-indigo-700 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 group text-center animate-fade-in"
+          class="bg-gray-900 border border-indigo-700 rounded-2xl p-6 shadow-md hover:shadow-indigo-600/30 transition-all duration-300 text-center"
           aria-labelledby={`${person.name.replace(/\s/g, '-').toLowerCase()}-name`}
         >
-          <div class="aspect-w-1 aspect-h-1 w-24 h-24 mx-auto mb-4">
-            <img
-              src={person.image}
-              alt={`Portrait of ${person.name}, ${person.role}`}
-              class="rounded-full object-cover border-2 border-indigo-500 shadow-sm"
-            />
-          </div>
+          <img
+            src={person.image}
+            alt={`Portrait of ${person.name}, ${person.role}`}
+            class="w-24 h-24 rounded-full object-cover border-2 border-indigo-500 shadow-sm mx-auto mb-4"
+          />
           <h2 id={`${person.name.replace(/\s/g, '-').toLowerCase()}-name`} class="text-xl font-semibold">
             {person.name}
           </h2>
           <p class="text-indigo-400 text-sm mb-2">{person.role}</p>
-          <div class="prose prose-invert text-sm text-gray-300 mx-auto mb-4 max-w-prose">
-            <p>{person.bio}</p>
+          <p class="text-sm text-gray-300 mb-4">{person.bio}</p>
+
+          <div class="flex justify-center gap-4 text-indigo-300 text-lg">
+            {person.links.linkedin && (
+              <a href={person.links.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label={`LinkedIn: ${person.name}`}>
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+              </a>
+            )}
+            {person.links.website && (
+              <a href={person.links.website} target="_blank" rel="noopener noreferrer" title="Website" aria-label={`Website: ${person.name}`}>
+                <i class="fas fa-globe" aria-hidden="true"></i>
+              </a>
+            )}
+            {person.links.github && (
+              <a href={person.links.github} target="_blank" rel="noopener noreferrer" title="GitHub" aria-label={`GitHub: ${person.name}`}>
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+            )}
+            {person.links.linkhub && (
+              <a href={person.links.linkhub} target="_blank" rel="noopener noreferrer" title="Link Hub" aria-label={`Link Hub: ${person.name}`}>
+                <i class="fas fa-link" aria-hidden="true"></i>
+              </a>
+            )}
           </div>
-          <nav aria-label={`Links for ${person.name}`}>
-            <div class="flex justify-center space-x-4 text-indigo-300 text-lg">
-              {person.links.linkedin && (
-                <a
-                  href={person.links.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${person.name} on LinkedIn`}
-                  title="LinkedIn"
-                >
-                  <i class="fab fa-linkedin" aria-hidden="true"></i>
-                </a>
-              )}
-              {person.links.website && (
-                <a
-                  href={person.links.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit ${person.name}'s website`}
-                  title="Website"
-                >
-                  <i class="fas fa-globe" aria-hidden="true"></i>
-                </a>
-              )}
-              {person.links.github && (
-                <a
-                  href={person.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${person.name}'s GitHub`}
-                  title="GitHub"
-                >
-                  <i class="fab fa-github" aria-hidden="true"></i>
-                </a>
-              )}
-              {person.links.linkhub && (
-                <a
-                  href={person.links.linkhub}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${person.name}'s link hub`}
-                  title="Link Hub"
-                >
-                  <i class="fas fa-link" aria-hidden="true"></i>
-                </a>
-              )}
-            </div>
-          </nav>
         </article>
       ))}
     </div>

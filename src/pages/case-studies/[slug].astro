@@ -1,0 +1,44 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// 1. Static paths from the "case-studies" collection
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('case-studies');
+  return caseStudies.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+// 2. Properly typed props for the entry
+const { entry }: { entry: CollectionEntry<'case-studies'> } = Astro.props;
+const { Content } = await entry.render();
+const { data } = entry;
+---
+
+<BaseLayout title={`${data.title} | AstroPraxis`} description={data.description}>
+  <section class="max-w-3xl mx-auto px-6 py-24 text-white">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold">{data.title}</h1>
+      <p class="text-sm text-gray-400 mt-1">{new Date(data.publishDate).toLocaleDateString()}</p>
+      {data.author && (
+        <p class="text-sm text-gray-400 mt-1">By {data.author}</p>
+      )}
+
+      {data.tags && (
+        <ul class="flex justify-center flex-wrap gap-2 mt-4">
+          {data.tags.map((tag) => (
+            <li class="text-xs bg-indigo-800/30 text-indigo-300 px-2 py-1 rounded-md tracking-wide uppercase">
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )}
+    </header>
+
+    <article class="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-300 prose-li:text-gray-300 prose-a:text-indigo-400">
+      <Content />
+    </article>
+  </section>
+</BaseLayout>
