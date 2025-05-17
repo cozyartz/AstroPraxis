@@ -37,24 +37,28 @@ const highlights = [
 
 <BaseLayout title="Home | AstroPraxis">
   <!-- HERO SECTION -->
- <section
-  class="bg-gradient-to-br from-indigo-950 via-purple-900 to-black text-white py-32 px-6 text-center animate-fade-in"
-  role="region"
-  aria-labelledby="hero-heading"
->
-  <div class="max-w-4xl mx-auto prose prose-invert">
-    <h1 id="hero-heading" class="text-5xl font-extrabold leading-tight tracking-tight">
-      Strategy for Systems That Actually Work
-    </h1>
-    <p class="text-lg text-gray-300 mb-10">
-      We’re a collective of women-owned, queer-led consultants, designers, technologists, and facilitators —
-      helping people transform the structures they're in, and build the ones they need.
-    </p>
-    <a href="/services" class="codepen-button w-max mx-auto">
-      <span class="px-5 py-2 text-base">Explore Our Services</span>
-    </a>
-  </div>
-</section>
+  <section
+    class="bg-gradient-to-br from-indigo-950 via-purple-900 to-black text-white py-32 px-6 text-center animate-fade-in"
+    role="region"
+    aria-labelledby="hero-heading"
+  >
+    <div class="max-w-4xl mx-auto prose prose-invert">
+      <h1 id="hero-heading" class="text-5xl font-extrabold leading-tight tracking-tight">
+        Strategy for Systems That Actually Work
+      </h1>
+      <p class="text-lg text-gray-300 mb-10">
+        We’re a collective of women-owned, queer-led consultants, designers, technologists, and facilitators —
+        helping people transform the structures they're in, and build the ones they need.
+      </p>
+      <a
+        href="/services"
+        class="inline-flex items-center gap-2 bg-black border border-white text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-white hover:text-black transition"
+      >
+        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+        Explore Our Services
+      </a>
+    </div>
+  </section>
 
   <!-- WHAT WE OFFER -->
   <section
@@ -65,9 +69,8 @@ const highlights = [
     <div class="max-w-6xl mx-auto">
       <h2 id="offer-heading" class="text-3xl font-bold text-center mb-12">What We Offer</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {highlights.map((h, i) => (
+        {highlights.map((h) => (
           <article
-            key={i}
             class="bg-gray-900 border border-indigo-700 rounded-xl p-6 shadow hover:shadow-xl transition-all duration-300 animate-fade-in"
             aria-label={h.label}
           >
@@ -83,16 +86,26 @@ const highlights = [
   </section>
 
   <!-- CTA SECTION -->
-<section class="bg-indigo-700 text-white text-center py-20 px-6 fade-in">
-  <div class="max-w-2xl mx-auto">
-    <h2 class="text-3xl font-bold mb-4">Let’s Build Something Better</h2>
-    <p class="text-base text-gray-200 mb-8 leading-relaxed">
-      Reach out to explore a collaboration — or tell us what’s not working yet.
-      We’ll meet you with care and possibility.
-    </p>
-    <a href="/contact" class="codepen-button w-fit mx-auto">
-      <span class="px-5 py-2 text-sm">Contact Us</span>
-    </a>
-  </div>
-</section>
+  <section class="bg-indigo-700 text-white text-center py-20 px-6 fade-in">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Let’s Build Something Better</h2>
+      <p class="text-base text-gray-200 mb-8 leading-relaxed">
+        Reach out to explore a collaboration — or tell us what’s not working yet.
+        We’ll meet you with care and possibility.
+      </p>
+
+      <!-- Rainbow animated border button -->
+      <a
+        href="https://queerlyqualified.formaloo.me/ejys27"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="codepen-button w-fit mx-auto"
+      >
+        <span class="px-4 py-2 text-sm">
+          <i class="fa-solid fa-message mr-2 text-sm" aria-hidden="true"></i>
+          Start the Conversation
+        </span>
+      </a>
+    </div>
+  </section>
 </BaseLayout>
