@@ -18,7 +18,7 @@ const tagIcons: Record<string, string> = {
 
 <BaseLayout title="Case Studies | AstroPraxis">
   <section
-    class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center animate-fade-in"
+    class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-28 px-6 text-center animate-fade-in"
     role="region"
     aria-labelledby="case-studies-heading"
   >
@@ -31,11 +31,11 @@ const tagIcons: Record<string, string> = {
   </section>
 
   <section
-    class="py-16 px-6 bg-black text-white animate-fade-in"
+    class="py-20 px-6 bg-black text-white animate-fade-in"
     role="region"
     aria-label="Case Study Grid"
   >
-    <div class="max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {posts.map(({ slug, data }) => {
         const icon = tagIcons[data.tags?.[0]] ?? tagIcons.default;
         return (
@@ -63,5 +63,13 @@ const tagIcons: Record<string, string> = {
         );
       })}
     </div>
+  </section>
+
+  <section class="bg-indigo-700 text-white text-center py-24 px-6 fade-in opacity-0 translate-y-6">
+    <h2 class="text-3xl font-bold mb-4">Let’s Build Something Better</h2>
+    <p class="text-lg mb-6 max-w-2xl mx-auto">Reach out to explore a collaboration — or tell us what’s not working yet. We’ll meet you with care and possibility.</p>
+    <a href="/contact" class="inline-block bg-white text-indigo-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+      Contact Us
+    </a>
   </section>
 </BaseLayout>

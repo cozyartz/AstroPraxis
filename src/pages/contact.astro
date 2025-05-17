@@ -1,7 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
----
 
+const callToActions = [
+  "Start something bold.",
+  "Begin your systems reboot.",
+  "Let’s build it together.",
+  "Spark a collaboration.",
+  "Design with care."
+];
+
+const ctaText = callToActions[Math.floor(Math.random() * callToActions.length)];
+---
 <BaseLayout title="Contact | AstroPraxis">
   <section class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-28 px-6 text-center animate-fade-in">
     <div class="max-w-3xl mx-auto">
@@ -23,10 +32,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
 
     <div class="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-      <!-- Contact Info -->
       <div class="bg-indigo-950/30 border border-indigo-700 rounded-2xl p-6 shadow-md">
         <h3 class="text-xl font-semibold mb-6 text-indigo-300">Contact Info</h3>
-
         <div class="space-y-4 text-left text-gray-300 text-sm">
           <div>
             <i class="fas fa-phone text-indigo-400 mr-2"></i>
@@ -37,13 +44,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <a href="mailto:hello@astropraxis.cc" class="text-indigo-300 hover:underline">hello@astropraxis.cc</a>
           </div>
         </div>
-
         <p class="mt-6 text-xs text-gray-500">
           Based in Michigan. Serving teams & orgs nationwide.
         </p>
       </div>
 
-      <!-- What to Expect -->
       <div class="bg-indigo-950/30 border border-indigo-700 rounded-2xl p-6 shadow-md">
         <h3 class="text-xl font-semibold mb-6 text-indigo-300">What to Expect</h3>
         <p class="text-sm text-gray-300 leading-relaxed mb-4">
@@ -56,6 +61,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
     </div>
+  </section>
+
+  <!-- CTA Footer Section -->
+  <section class="bg-indigo-700 text-white text-center py-24 px-6 fade-in opacity-0 translate-y-6">
+    <h2 class="text-3xl font-bold mb-4">Let’s Build Something Better</h2>
+    <p class="text-lg mb-10 max-w-2xl mx-auto">
+      From first hello to full collaboration, here’s what to expect when you connect with AstroPraxis.
+    </p>
+
+    <div class="max-w-4xl mx-auto grid md:grid-cols-4 gap-6 text-sm text-indigo-100 mb-10">
+      <div class="p-4 rounded-xl bg-indigo-900/30 border border-indigo-600/40">
+        <div class="text-3xl font-bold mb-2">1</div>
+        <p>We read your message with real attention — not automation.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-indigo-900/30 border border-indigo-600/40">
+        <div class="text-3xl font-bold mb-2">2</div>
+        <p>You’ll hear back in 2–3 business days with care and clarity.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-indigo-900/30 border border-indigo-600/40">
+        <div class="text-3xl font-bold mb-2">3</div>
+        <p>We co-design a path forward — no assumptions, no pressure.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-indigo-900/30 border border-indigo-600/40">
+        <div class="text-3xl font-bold mb-2">4</div>
+        <p>We collaborate with integrity, insight, and mutual respect.</p>
+      </div>
+    </div>
+
+    <a
+      href="/contact"
+      class="inline-block bg-white text-indigo-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+    >
+      {ctaText}
+    </a>
   </section>
 
   <!-- Formaloo Chatbot Widget -->
