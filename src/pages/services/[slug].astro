@@ -1,0 +1,22 @@
+// === 3. pages/services/[slug].astro ===
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import services from '../../content/services.json';
+
+const { slug } = Astro.params;
+const service = services.find((s) => s.slug === slug);
+
+if (!service) {
+  throw new Error(`Service not found for slug: ${slug}`);
+}
+---
+
+<BaseLayout title={service.title}>
+  <section class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center">
+    <div class="max-w-3xl mx-auto space-y-4">
+      <i class={`${service.icon} text-4xl text-indigo-400`} aria-hidden="true"></i>
+      <h1 class="text-3xl font-bold">{service.title}</h1>
+      <p class="text-base text-gray-300">{service.detailBody}</p>
+    </div>
+  </section>
+</BaseLayout>

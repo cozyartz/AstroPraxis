@@ -8,9 +8,15 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.6",
+    "@astrojs/react": "^4.2.7",
     "@astrojs/tailwind": "^5.1.5",
     "@tailwindcss/line-clamp": "^0.4.4",
-    "astro": "^5.7.13"
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "astro": "^5.7.13",
+    "framer-motion": "^12.12.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",

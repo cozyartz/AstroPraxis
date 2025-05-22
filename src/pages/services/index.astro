@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const services = await getCollection('services');
+---
+
+<BaseLayout title="Services | AstroPraxis">
+  <section class="bg-black text-white py-20 px-6 text-center">
+    <div class="max-w-3xl mx-auto space-y-4">
+      <h1 class="text-4xl font-bold">Explore Our Services</h1>
+      <p class="text-gray-400 text-lg">
+        We build human-centered systems across design, tech, learning, equity, and infrastructure.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-gray-950 py-16 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map(({ data, slug }) => (
+        <a href={`/services/${slug}`} class="group bg-gray-900 border border-indigo-700 rounded-xl p-6 shadow-md hover:shadow-xl transition text-left">
+          <div class="flex items-center gap-3 mb-3">
+            <i class={`${data.icon} text-2xl text-indigo-400`} aria-hidden="true"></i>
+            <h3 class="text-lg font-semibold group-hover:text-white">{data.title}</h3>
+          </div>
+          <p class="text-sm text-gray-300 group-hover:text-gray-100">{data.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
