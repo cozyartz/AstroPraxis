@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,ts,tsx,vue,md,mdx}"],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,ts,tsx,vue,md,mdx}"
+  ],
+
+  safelist: ['hidden'], // Ensures the "hidden" class is always included
 
   theme: {
     extend: {

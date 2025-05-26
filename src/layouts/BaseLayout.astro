@@ -61,23 +61,26 @@ const { title = "AstroPraxis" } = Astro.props;
     </main>
 
     <!-- Footer -->
+       <!-- Footer -->
     <footer class="text-center text-sm text-gray-500 py-6 border-t border-gray-800 bg-black">
       © 2025 AstroPraxis · Michigan-based · All rights reserved
     </footer>
 
     <!-- Toggle Script with Random Icon -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('DOMContentLoaded', function () {
         const toggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('mobile-menu');
         const icon = document.getElementById('menu-icon');
-
         const icons = ['🌟', '✨', '✴️', '☄️', '🪐', '🔮', '🌠', '🛸'];
-        icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-
-        toggle.addEventListener('click', () => {
-          menu.classList.toggle('hidden');
-        });
+        if (icon) {
+          icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+        }
+        if (toggle && menu) {
+          toggle.addEventListener('click', function () {
+            menu.classList.toggle('hidden');
+          });
+        }
       });
     </script>
   </body>
