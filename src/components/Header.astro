@@ -1,0 +1,94 @@
+---
+import navItems from "../data/nav.json";
+import type { NavItem } from "../data/nav";
+
+const typedNav = navItems as NavItem[];
+const currentPath = Astro.url.pathname;
+---
+<header class="bg-black text-white p-6 shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <!-- Logo -->
+    <a href="/" class="text-xl font-bold tracking-tight">AstroPraxis</a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-6 text-sm items-center relative">
+      {navItems.map(item => item.children ? (
+        <div class="group relative">
+          <button class="hover:text-indigo-400 transition">{item.label}</button>
+          <div class="absolute left-0 mt-2 hidden group-hover:block bg-black shadow-lg rounded-lg border border-gray-800 z-10">
+            <ul class="py-2 px-4 space-y-1 text-sm">
+              {item.children.map(child => (
+                <li>
+                  <a
+                    href={child.href}
+                    class={`block hover:text-indigo-400 transition ${isActive(child.href) ? "text-indigo-400 font-semibold" : ""}`}
+                  >
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ) : (
+        <a
+          href={item.href}
+          class={`hover:text-indigo-400 transition ${isActive(item.href) ? "text-indigo-400 font-semibold" : ""}`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Mobile Toggle -->
+    <button
+      id="menu-toggle"
+      class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 p-2 rounded-full hover:bg-indigo-900 transition"
+      aria-label="Toggle menu"
+    >
+      <span id="menu-icon" class="text-xl" aria-hidden="true">✴️</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pt-4 pb-6 space-y-4 animate-fade-in">
+    {navItems.map(item => item.children ? (
+      <div>
+        <p class="text-white font-semibold mb-2">{item.label}</p>
+        <ul class="space-y-2 pl-4">
+          {item.children.map(child => (
+            <li>
+              <a
+                href={child.href}
+                class={`block hover:text-indigo-400 transition ${isActive(child.href) ? "text-indigo-400 font-semibold" : ""}`}
+              >
+                {child.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ) : (
+      <a
+        href={item.href}
+        class={`block hover:text-indigo-400 transition ${isActive(item.href) ? "text-indigo-400 font-semibold" : ""}`}
+      >
+        {item.label}
+      </a>
+    ))}
+  </div>
+</header>
+
+<script type="text/javascript" is:inline>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+  const icons = ['🌟', '✨', '✴️', '☄️', '🪐', '🔮', '🌠', '🛸'];
+
+  if (icon) icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

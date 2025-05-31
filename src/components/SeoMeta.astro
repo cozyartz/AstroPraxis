@@ -1,17 +1,17 @@
 ---
-// SeoMeta.astro
+// src/components/SeoMeta.astro
 export interface Props {
   title: string;
   description: string;
   canonical?: string;
-  image?: string;
+  ogImage?: string;
 }
 
 const {
   title,
   description,
   canonical = "https://astropraxis.cc",
-  image = "https://astropraxis.cc/og-image.jpg",
+  ogImage = "https://astropraxis.cc/og-image.jpg"
 } = Astro.props;
 ---
 
@@ -26,22 +26,23 @@ const {
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
-  <meta property="og:image" content={image} />
+  <meta property="og:image" content={ogImage} />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={image} />
+  <meta name="twitter:image" content={ogImage} />
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
     {JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": title,
-      "url": canonical,
-      "description": description,
+      name: title,
+      url: canonical,
+      description,
+      image: ogImage
     })}
   </script>
 </head>

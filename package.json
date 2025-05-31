@@ -9,6 +9,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.2.6",
     "@astrojs/react": "^4.2.7",
+    "@astrojs/sitemap": "^3.4.0",
     "@astrojs/tailwind": "^5.1.5",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/react": "^19.1.4",

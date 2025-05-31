@@ -1,87 +1,23 @@
 ---
-const { title = "AstroPraxis" } = Astro.props;
+const { title = "AstroPraxis", description, ogImage } = Astro.props;
+import SeoMeta from "../components/SeoMeta.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en" class="scroll-smooth">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-
-    <!-- Global Styles -->
+    <SeoMeta title={title} description={description} ogImage={ogImage} />
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <script src="https://kit.fontawesome.com/8a91e67263.js" crossorigin="anonymous"></script>
-
-    <!-- Site-wide JS -->
-    <script type="module" src="/scripts/site.js"></script>
   </head>
 
   <body class="bg-black text-white font-sans leading-relaxed">
-    <!-- Header -->
-    <header class="bg-black text-white p-6 shadow-md sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <a href="/" class="text-xl font-bold tracking-tight">AstroPraxis</a>
-
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex space-x-6 text-sm">
-          <a href="/" class="hover:text-indigo-400 transition">Home</a>
-          <a href="/about" class="hover:text-indigo-400 transition">About</a>
-          <a href="/services" class="hover:text-indigo-400 transition">Services</a>
-          <a href="/case-studies" class="hover:text-indigo-400 transition">Case Studies</a>
-          <a href="/contact" class="hover:text-indigo-400 transition">Contact</a>
-        </nav>
-
-        <!-- Mobile Toggle -->
-        <button
-          id="menu-toggle"
-          class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 p-2 rounded-full hover:bg-indigo-900 transition"
-          aria-label="Toggle menu"
-        >
-          <span id="menu-icon" class="text-xl" aria-hidden="true">✴️</span>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden hidden px-6 pt-4 pb-6 animate-fade-in">
-        <ul class="space-y-4 text-sm">
-          <li><a href="/" class="block hover:text-indigo-400 transition">Home</a></li>
-          <li><a href="/about" class="block hover:text-indigo-400 transition">About</a></li>
-          <li><a href="/services" class="block hover:text-indigo-400 transition">Services</a></li>
-          <li><a href="/case-studies" class="block hover:text-indigo-400 transition">Case Studies</a></li>
-          <li><a href="/contact" class="block hover:text-indigo-400 transition">Contact</a></li>
-        </ul>
-      </div>
-    </header>
-
-    <!-- Main Content Slot -->
+    <Header />
     <main class="min-h-screen animate-fade-in">
       <slot />
     </main>
-
-    <!-- Footer -->
-       <!-- Footer -->
-    <footer class="text-center text-sm text-gray-500 py-6 border-t border-gray-800 bg-black">
-      © 2025 AstroPraxis · Michigan-based · All rights reserved
-    </footer>
-
-    <!-- Toggle Script with Random Icon -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const toggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('menu-icon');
-        const icons = ['🌟', '✨', '✴️', '☄️', '🪐', '🔮', '🌠', '🛸'];
-        if (icon) {
-          icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-        }
-        if (toggle && menu) {
-          toggle.addEventListener('click', function () {
-            menu.classList.toggle('hidden');
-          });
-        }
-      });
-    </script>
+    <Footer />
   </body>
 </html>
