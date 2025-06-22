@@ -1,39 +1,37 @@
 ---
-import SeoMeta from '../components/SeoMeta.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import services from '../../content/services.json';
 ---
 
-<BaseLayout>
-  <SeoMeta
-    title="AstroPraxis | Strategy & Design for Systems Change"
-    description="AstroPraxis is a women-owned, queer-led consultancy supporting equity-driven organizations through systems thinking, inclusive design, and strategic facilitation."
-    canonical="https://astropraxis.cc/"
-    image="https://astropraxis.cc/og-image.jpg"
-  />
-
+<BaseLayout
+  title="AstroPraxis Services"
+  description="Explore our strategic offerings and design-centered services for mission-driven organizations."
+  canonical="https://astropraxis.cc/services"
+  ogImage="/images/og-services.jpg"
+>
   <section class="bg-black text-white py-24 px-6 text-center">
-    <div class="max-w-3xl mx-auto space-y-6">
-      <h1 class="text-5xl font-bold">Systems Change by Design</h1>
-      <p class="text-xl text-gray-300">
-        AstroPraxis partners with mission-driven teams to build equitable strategies, products, and practices.
+    <div class="max-w-3xl mx-auto mb-12 space-y-4">
+      <h1 class="text-5xl font-bold">What We Offer</h1>
+      <p class="text-lg text-gray-300">
+        From decision frameworks to scalable automation, we help teams move with clarity.
       </p>
     </div>
-  </section>
 
-  <section class="bg-gray-950 text-white py-20 px-6">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-      <div>
-        <h2 class="text-2xl font-semibold mb-4">What We Do</h2>
-        <p class="text-gray-400">
-          From workshops to product design, from community tech to systems strategy, we apply a creative, equity-centered lens to every engagement.
-        </p>
-      </div>
-      <div>
-        <h2 class="text-2xl font-semibold mb-4">Who We Work With</h2>
-        <p class="text-gray-400">
-          Our collaborators include nonprofits, cooperatives, public sector teams, and startups aligning values with action.
-        </p>
-      </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      {services.map((service) => (
+        <a
+          href={`/services/${service.slug}`}
+          class="group block border border-gray-800 rounded-lg p-6 bg-gradient-to-b from-gray-950 to-black hover:border-indigo-500 transition"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <i class={`${service.icon} text-indigo-400 text-2xl`} aria-hidden="true"></i>
+            <h2 class="text-xl font-semibold group-hover:text-indigo-400 transition">
+              {service.title}
+            </h2>
+          </div>
+          <p class="text-sm text-gray-400">{service.summary}</p>
+        </a>
+      ))}
     </div>
   </section>
 </BaseLayout>

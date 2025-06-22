@@ -1,7 +1,13 @@
-// === 3. pages/services/[slug].astro ===
 ---
+// src/pages/services/[slug].astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import services from '../../content/services.json';
+
+export async function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug }
+  }));
+}
 
 const { slug } = Astro.params;
 const service = services.find((s) => s.slug === slug);
