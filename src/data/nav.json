@@ -3,13 +3,6 @@
   { "label": "About", "href": "/about" },
   { "label": "Services", "href": "/services" },
   { "label": "Case Studies", "href": "/case-studies" },
-  { "label": "Contact", "href": "/contact" },
-  {
-    "label": "Programs & Kits",
-    "children": [
-      { "label": "Own Your Power", "href": "/own" },
-      { "label": "Team Clarity Sprint", "href": "/clarity" },
-      { "label": "Leadership Labs", "href": "/labs" }
-    ]
-  }
+  { "label": "Own Your Power", "href": "/own" },
+  { "label": "Contact", "href": "/contact" }
 ]
