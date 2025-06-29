@@ -3,6 +3,7 @@ const { title = "AstroPraxis", description, ogImage } = Astro.props;
 import SeoMeta from "../components/SeoMeta.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "@awesome.me/kit-8a91e67263/icons/css/all.css";
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -10,7 +11,6 @@ import Footer from "../components/Footer.astro";
     <SeoMeta title={title} description={description} ogImage={ogImage} />
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="icon" href="/favicon.png" type="image/png" />
-    <script src="https://kit.fontawesome.com/8a91e67263.js" crossorigin="anonymous"></script>
   </head>
 
   <body class="bg-black text-white font-sans leading-relaxed">
