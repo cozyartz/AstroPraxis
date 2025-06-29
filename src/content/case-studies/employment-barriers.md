@@ -14,7 +14,7 @@ From inaccessible job applications to employer assumptions about “fit,” barr
 
 ---
 
-## <i class="fas fa-universal-access text-indigo-400"></i> Understanding the Barriers
+## <i class="fa-solid fa-universal-access text-indigo-400"></i> Understanding the Barriers
 
 ### Physical and Environmental
 
@@ -34,7 +34,7 @@ From inaccessible job applications to employer assumptions about “fit,” barr
 
 ---
 
-## <i class="fas fa-tools text-indigo-400"></i> What We've Seen Work
+## <i class="fa-solid fa-tools text-indigo-400"></i> What We've Seen Work
 
 At AstroPraxis, we’ve partnered with individuals and agencies to design access-centered employment strategies.
 
@@ -46,7 +46,7 @@ At AstroPraxis, we’ve partnered with individuals and agencies to design access
 
 ---
 
-## <i class="fas fa-lightbulb text-indigo-400"></i> Designing Systems Differently
+## <i class="fa-solid fa-lightbulb text-indigo-400"></i> Designing Systems Differently
 
 ### Reframe “Job Readiness”
 
@@ -68,7 +68,7 @@ At AstroPraxis, we’ve partnered with individuals and agencies to design access
 
 ---
 
-## <i class="fas fa-clipboard-check text-indigo-400"></i> What We Recommend
+## <i class="fa-solid fa-clipboard-check text-indigo-400"></i> What We Recommend
 
 | Focus Area     | Inclusive Practice |
 |----------------|--------------------|
@@ -79,7 +79,7 @@ At AstroPraxis, we’ve partnered with individuals and agencies to design access
 
 ---
 
-## <i class="fas fa-link text-indigo-400"></i> Resources
+## <i class="fa-solid fa-link text-indigo-400"></i> Resources
 
 - [Job Accommodation Network (JAN)](https://askjan.org/)
 - [W3C: Accessible Hiring Practices](https://www.w3.org/WAI/people-use-web/abilities-barriers/)

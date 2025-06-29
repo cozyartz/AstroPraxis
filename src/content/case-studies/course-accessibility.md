@@ -16,7 +16,7 @@ An access-first audit centers the experiences of learners who are most often exc
 
 ---
 
-## <i class="fas fa-book-open text-indigo-400"></i> Understanding the Frameworks
+## <i class="fa-solid fa-book-open text-indigo-400"></i> Understanding the Frameworks
 
 ### Web Content Accessibility Guidelines (WCAG)
 
@@ -41,7 +41,7 @@ UDL goes beyond compliance. It’s about designing from the margins — creating
 
 ---
 
-## <i class="fas fa-check-circle text-indigo-400"></i> Steps for Conducting an Access-First Audit
+## <i class="fa-solid fa-check-circle text-indigo-400"></i> Steps for Conducting an Access-First Audit
 
 ### 1. Review Course Materials
 
@@ -75,7 +75,7 @@ UDL goes beyond compliance. It’s about designing from the margins — creating
 
 ---
 
-## <i class="fas fa-toolbox text-indigo-400"></i> Tools and Resources
+## <i class="fa-solid fa-toolbox text-indigo-400"></i> Tools and Resources
 
 - [WAVE Accessibility Checker](https://wave.webaim.org/)
 - [Color Contrast Analyzer](https://webaim.org/resources/contrastchecker/)

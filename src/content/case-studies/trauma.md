@@ -16,7 +16,7 @@ If the first week of work teaches someone how much masking they’ll need to sur
 
 ---
 
-## <i class="fas fa-triangle-exclamation text-indigo-400"></i> A Typical Flow (The Problem)
+## <i class="fa-solid fa-triangle-exclamation text-indigo-400"></i> A Typical Flow (The Problem)
 
 - Intake forms with no context or accommodations
 - Calendar invites with unclear power dynamics
@@ -27,7 +27,7 @@ If the first week of work teaches someone how much masking they’ll need to sur
 
 ---
 
-## <i class="fas fa-heart text-indigo-400"></i> Our Design Principles
+## <i class="fa-solid fa-heart text-indigo-400"></i> Our Design Principles
 
 | Principle              | Practice                                                         |
 |------------------------|------------------------------------------------------------------|
@@ -39,7 +39,7 @@ If the first week of work teaches someone how much masking they’ll need to sur
 
 ---
 
-## <i class="fas fa-seedling text-indigo-400"></i> A Redesigned Flow (The Alternative)
+## <i class="fa-solid fa-seedling text-indigo-400"></i> A Redesigned Flow (The Alternative)
 
 ### Day 0: Welcome Letter  
 A warm, purpose-driven email that introduces what’s coming — not just the logistics, but the *why* behind it all.
@@ -52,7 +52,7 @@ Meet the team asynchronously. Choose an onboarding buddy. Set your own pacing wi
 
 ---
 
-## <i class="fas fa-clipboard-check text-indigo-400"></i> What You Can Try Today
+## <i class="fa-solid fa-clipboard-check text-indigo-400"></i> What You Can Try Today
 
 - Send meeting agendas in advance (and mean it)
 - Rewrite docs for skimmability and tone
@@ -61,7 +61,7 @@ Meet the team asynchronously. Choose an onboarding buddy. Set your own pacing wi
 
 ---
 
-## <i class="fas fa-lightbulb text-indigo-400"></i> Why This Is Systems Work
+## <i class="fa-solid fa-lightbulb text-indigo-400"></i> Why This Is Systems Work
 
 Trauma-informed design isn’t about being soft — it’s about being *structured with care*. It’s about designing systems that expect harm has happened, and work to interrupt it.
 
@@ -72,7 +72,7 @@ In onboarding, that means:
 
 ---
 
-## <i class="fas fa-link text-indigo-400"></i> Resources
+## <i class="fa-solid fa-link text-indigo-400"></i> Resources
 
 - [The Power of Predictability in Trauma-Informed Practice](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8445447/)
 - [Trauma-Informed Organizational Toolkit](https://traumainformedoregon.org/resources/)

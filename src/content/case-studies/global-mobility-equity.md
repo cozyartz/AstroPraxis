@@ -14,7 +14,7 @@ Organizations aiming to foster inclusive and equitable workplaces must recognize
 
 ---
 
-## <i class="fas fa-globe text-indigo-400"></i> Understanding the Transition Challenges
+## <i class="fa-solid fa-globe text-indigo-400"></i> Understanding the Transition Challenges
 
 ### Barriers Faced by International and First-Gen Professionals
 
@@ -28,7 +28,7 @@ Organizations aiming to foster inclusive and equitable workplaces must recognize
 
 ---
 
-## <i class="fas fa-handshake text-indigo-400"></i> Strategies for Equitable Support
+## <i class="fa-solid fa-handshake text-indigo-400"></i> Strategies for Equitable Support
 
 ### 1. Implement Structured Mentorship Programs
 
@@ -56,7 +56,7 @@ Organizations aiming to foster inclusive and equitable workplaces must recognize
 
 ---
 
-## <i class="fas fa-toolbox text-indigo-400"></i> Tools and Resources
+## <i class="fa-solid fa-toolbox text-indigo-400"></i> Tools and Resources
 
 - [UCSF First Gen Mentorship Guide](https://firstgen.ucsf.edu/sites/g/files/tkssra306/f/wysiwyg/Mentorship%20Guide.pdf)
 

@@ -14,7 +14,7 @@ Designing for neurodivergence means acknowledging the brilliant, nonlinear, rich
 
 ---
 
-## <i class="fas fa-brain text-indigo-400"></i> Understanding Neurodivergent Learning
+## <i class="fa-solid fa-brain text-indigo-400"></i> Understanding Neurodivergent Learning
 
 **Neurodivergence** refers to natural variations in brain function, including autism, ADHD, dyslexia, dyspraxia, and more. These are not deficits — they are differences in processing, patterning, and pacing.
 
@@ -22,7 +22,7 @@ Inclusive learning design starts by assuming that these differences already exis
 
 ---
 
-## <i class="fas fa-universal-access text-indigo-400"></i> Principles of Inclusive Design
+## <i class="fa-solid fa-universal-access text-indigo-400"></i> Principles of Inclusive Design
 
 We build from two core frameworks:
 
@@ -34,7 +34,7 @@ We build from two core frameworks:
 
 ---
 
-## <i class="fas fa-lightbulb text-indigo-400"></i> Strategies for Supporting Neurodivergent Learners
+## <i class="fa-solid fa-lightbulb text-indigo-400"></i> Strategies for Supporting Neurodivergent Learners
 
 ### 1. Clear and Consistent Layout
 
@@ -86,7 +86,7 @@ We build from two core frameworks:
 
 ---
 
-## <i class="fas fa-toolbox text-indigo-400"></i> Tools and Resources
+## <i class="fa-solid fa-toolbox text-indigo-400"></i> Tools and Resources
 
 - [CAST UDL Guidelines](https://udlguidelines.cast.org/)
 - [WAVE Accessibility Evaluation Tool](https://wave.webaim.org/)

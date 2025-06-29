@@ -14,7 +14,7 @@ Aerial imagery allows us to witness the patterns of land loss, pollution, and di
 
 ---
 
-## <i class="fas fa-circle-info text-indigo-400"></i> Context & Intention
+## <i class="fa-solid fa-circle-info text-indigo-400"></i> Context & Intention
 
 **Scenario:** A hypothetical rural area is facing long-term land degradation due to industrial dumping and unauthorized construction. Local residents suspect environmental violations — but have no proof that’s legible to regulators.
 
@@ -28,7 +28,7 @@ Aerial imagery allows us to witness the patterns of land loss, pollution, and di
 
 ---
 
-## <i class="fas fa-cogs text-indigo-400"></i> Tools & Methods
+## <i class="fa-solid fa-cogs text-indigo-400"></i> Tools & Methods
 
 | Tool                  | Purpose                                               |
 |-----------------------|-------------------------------------------------------|
@@ -40,7 +40,7 @@ Aerial imagery allows us to witness the patterns of land loss, pollution, and di
 
 ---
 
-## <i class="fas fa-drone text-indigo-400"></i> Flight + Data Processing
+## <i class="fa-solid fa-drone text-indigo-400"></i> Flight + Data Processing
 
 ### Flight Planning
 - Defined grid paths with 80% overlap for optimal photogrammetry.
@@ -56,7 +56,7 @@ Aerial imagery allows us to witness the patterns of land loss, pollution, and di
 
 ---
 
-## <i class="fas fa-eye text-indigo-400"></i> What We Found
+## <i class="fa-solid fa-eye text-indigo-400"></i> What We Found
 
 ### Vegetation Loss
 Significant dieback near the suspected dumping zone, confirmed with NDVI analysis in FIELDimageR.
@@ -69,7 +69,7 @@ Mapped residential homes within 250 meters of affected land — potential health
 
 ---
 
-## <i class="fas fa-bullhorn text-indigo-400"></i> Why This Matters for Advocacy
+## <i class="fa-solid fa-bullhorn text-indigo-400"></i> Why This Matters for Advocacy
 
 Visual data is persuasive in a way that reports often aren’t.
 
@@ -82,7 +82,7 @@ When paired with stories and context, this data becomes legible power.
 
 ---
 
-## <i class="fas fa-toolbox text-indigo-400"></i> Your Own Toolkit
+## <i class="fa-solid fa-toolbox text-indigo-400"></i> Your Own Toolkit
 
 Interested in replicating this process? Here's where to start:
 
@@ -93,7 +93,7 @@ Interested in replicating this process? Here's where to start:
 
 ---
 
-## <i class="fas fa-link text-indigo-400"></i> Resources
+## <i class="fa-solid fa-link text-indigo-400"></i> Resources
 
 - [OpenDroneMap Docs](https://docs.opendronemap.org/)
 - [QGIS Tutorials](https://docs.qgis.org/)

@@ -6,7 +6,7 @@ function isActive(href: string): boolean {
   return currentPath === href;
 }
 
-const icons = ['fas fa-bars', 'fas fa-ellipsis', 'fas fa-grip-lines', 'fas fa-stream', 'fas fa-list', 'fas fa-align-justify', 'fas fa-hamburger', 'fas fa-grip-horizontal', 'fas fa-th-list', 'fas fa-grip-vertical'];
+const icons = ['fa-solid fa-bars', 'fa-solid fa-ellipsis', 'fa-solid fa-grip-lines', 'fa-solid fa-stream', 'fa-solid fa-list', 'fa-solid fa-align-justify', 'fa-solid fa-hamburger', 'fa-solid fa-grip-horizontal', 'fa-regular fa-list', 'fa-light fa-grip-vertical'];
 const randomIcon = icons[Math.floor(Math.random() * icons.length)];
 ---
 
@@ -89,7 +89,7 @@ const randomIcon = icons[Math.floor(Math.random() * icons.length)];
     const menu = document.getElementById('mobile-menu');
     const menuIcon = document.getElementById('menu-icon');
     
-    const icons = ['fas fa-bars', 'fas fa-ellipsis', 'fas fa-grip-lines', 'fas fa-stream', 'fas fa-list', 'fas fa-align-justify', 'fas fa-hamburger', 'fas fa-grip-horizontal', 'fas fa-th-list', 'fas fa-grip-vertical'];
+    const icons = ['fa-solid fa-bars', 'fa-solid fa-ellipsis', 'fa-solid fa-grip-lines', 'fa-solid fa-stream', 'fa-solid fa-list', 'fa-solid fa-align-justify', 'fa-solid fa-hamburger', 'fa-solid fa-grip-horizontal', 'fa-regular fa-list', 'fa-light fa-grip-vertical'];
 
     if (toggle && menu && menuIcon) {
       toggle.addEventListener('click', () => {
