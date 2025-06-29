@@ -6,7 +6,7 @@ function isActive(href: string): boolean {
   return currentPath === href;
 }
 
-const icons = ['🌟', '✨', '✴️', '☄️', '🪐', '🔮', '🌠', '🛸'];
+const icons = ['fas fa-bars', 'fas fa-ellipsis', 'fas fa-grip-lines', 'fas fa-stream', 'fas fa-list', 'fas fa-align-justify', 'fas fa-hamburger', 'fas fa-grip-horizontal', 'fas fa-th-list', 'fas fa-grip-vertical'];
 const randomIcon = icons[Math.floor(Math.random() * icons.length)];
 ---
 
@@ -50,7 +50,7 @@ const randomIcon = icons[Math.floor(Math.random() * icons.length)];
       class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 p-2 rounded-full hover:bg-indigo-900 transition"
       aria-label="Toggle menu"
     >
-      <span id="menu-icon" class="text-xl" aria-hidden="true">{randomIcon}</span>
+      <i id="menu-icon" class={`text-xl ${randomIcon}`} aria-hidden="true"></i>
     </button>
   </div>
 
@@ -87,10 +87,17 @@ const randomIcon = icons[Math.floor(Math.random() * icons.length)];
   document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    
+    const icons = ['fas fa-bars', 'fas fa-ellipsis', 'fas fa-grip-lines', 'fas fa-stream', 'fas fa-list', 'fas fa-align-justify', 'fas fa-hamburger', 'fas fa-grip-horizontal', 'fas fa-th-list', 'fas fa-grip-vertical'];
 
-    if (toggle && menu) {
+    if (toggle && menu && menuIcon) {
       toggle.addEventListener('click', () => {
         menu.classList.toggle('hidden');
+        
+        // Change icon randomly on each click
+        const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+        menuIcon.className = `text-xl ${randomIcon}`;
       });
     }
   });
