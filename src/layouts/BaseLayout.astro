@@ -1,14 +1,16 @@
 ---
-const { title = "AstroPraxis", description, ogImage } = Astro.props;
+const { title = "AstroPraxis", description, ogImage, keywords, type, author, publishedTime, modifiedTime } = Astro.props;
 import SeoMeta from "../components/SeoMeta.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import "@awesome.me/kit-8a91e67263/icons/css/all.css";
 ---
 
 <html lang="en" class="scroll-smooth">
   <head>
-    <SeoMeta title={title} description={description} ogImage={ogImage} />
+    <SeoMeta title={title} description={description} ogImage={ogImage} keywords={keywords} type={type} author={author} publishedTime={publishedTime} modifiedTime={modifiedTime} />
+    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
+    <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin>
+    <script src="https://kit.fontawesome.com/8a91e67263.js?v=1735512000" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="icon" href="/favicon.png" type="image/png" />
   </head>

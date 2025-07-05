@@ -33,6 +33,12 @@ Disallow: /
 User-agent: facebookexternalhit
 Disallow: /
 
-# Block all others not explicitly allowed
+# Allow other search engines
 User-agent: *
-Disallow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.config.*$
+
+# Sitemap
+Sitemap: https://astropraxis.cc/sitemap.xml
