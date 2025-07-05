@@ -5,44 +5,156 @@ export interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  keywords?: string;
+  type?: 'website' | 'article' | 'service';
+  author?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 const {
   title,
   description,
   canonical = "https://astropraxis.cc",
-  ogImage = "https://astropraxis.cc/og-image.jpg"
+  ogImage = "https://astropraxis.cc/og-image.jpg",
+  keywords = "equity consulting, systems strategy, ADA compliance, instructional design, Michigan consultancy, Battle Creek Michigan, inclusive design, disability advocacy, aerial intelligence, drone services, transformative consulting, West Michigan, Southwest Michigan, Michigan business, women-owned Michigan business",
+  type = "website",
+  author = "AstroPraxis Consulting",
+  publishedTime,
+  modifiedTime
 } = Astro.props;
 ---
 
 <head>
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content={author} />
   <meta name="robots" content="index, follow" />
+  <meta name="language" content="en-US" />
+  <meta name="geo.region" content="US-MI" />
+  <meta name="geo.placename" content="Battle Creek, Michigan" />
+  <meta name="geo.position" content="42.3211;-85.1797" />
+  <meta name="ICBM" content="42.3211, -85.1797" />
   <link rel="canonical" href={canonical} />
 
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={type} />
   <meta property="og:url" content={canonical} />
   <meta property="og:image" content={ogImage} />
+  <meta property="og:image:alt" content="AstroPraxis Consulting - Transforming structures, building possibilities" />
+  <meta property="og:site_name" content="AstroPraxis Consulting" />
+  <meta property="og:locale" content="en_US" />
+  {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+  {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+  <meta property="article:author" content={author} />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@astropraxis" />
+  <meta name="twitter:creator" content="@astropraxis" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image:alt" content="AstroPraxis Consulting - Transforming structures, building possibilities" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
     {JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: title,
-      url: canonical,
-      description,
-      image: ogImage
+      "@type": type === 'website' ? 'Organization' : 'WebPage',
+      ...(type === 'website' ? {
+        name: "AstroPraxis Consulting",
+        url: "https://astropraxis.cc",
+        description: "Women-owned, queer-led consultancy specializing in equity-centered systems transformation, ADA compliance, and inclusive design.",
+        image: ogImage,
+        logo: "https://astropraxis.cc/favicon.png",
+        foundingDate: "2020",
+        foundingLocation: {
+          "@type": "Place",
+          name: "Battle Creek, Michigan",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Battle Creek",
+            addressRegion: "MI",
+            addressCountry: "US"
+          }
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+1-269-222-4330",
+          contactType: "customer service",
+          availableLanguage: "en"
+        },
+        sameAs: [
+          "https://astropraxis.cc"
+        ],
+        serviceArea: {
+          "@type": "State",
+          name: "Michigan"
+        },
+        areaServed: "US",
+        knowsAbout: [
+          "Equity Consulting",
+          "Systems Strategy",
+          "ADA Compliance",
+          "Instructional Design",
+          "Aerial Intelligence",
+          "Disability Advocacy",
+          "Inclusive Design"
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Consulting Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Systems Strategy",
+                description: "Comprehensive organizational transformation and strategic planning"
+              }
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Equity Consulting",
+                description: "Intersectional equity work that creates lasting structural change"
+              }
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "ADA & Disability Advocacy",
+                description: "Compliance, accessibility, and inclusive design consultation"
+              }
+            }
+          ]
+        }
+      } : {
+        name: title,
+        url: canonical,
+        description,
+        image: ogImage,
+        author: {
+          "@type": "Organization",
+          name: author
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "AstroPraxis Consulting",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://astropraxis.cc/favicon.png"
+          }
+        },
+        ...(publishedTime && { datePublished: publishedTime }),
+        ...(modifiedTime && { dateModified: modifiedTime })
+      })
     })}
   </script>
 </head>
