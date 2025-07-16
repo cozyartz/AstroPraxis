@@ -2,63 +2,70 @@
   {
     "slug": "org-strategy",
     "title": "Organizational Strategy & Facilitation",
-    "icon": "fa-solid fa-compass-drafting",
+    "icon": "compass",
     "summary": "Strategic planning, decision-making frameworks, retreat design, and trauma-informed facilitation for complex teams.",
     "detailBody": "We help teams work through complexity. Our facilitation practices are grounded in trauma-informed care, equity principles, and clarity-driven decision frameworks."
   },
   {
     "slug": "equity-consulting",
     "title": "Equity & Access Consulting",
-    "icon": "fa-solid fa-scale-balanced",
+    "icon": "scale",
     "summary": "Policy audits, inclusive design sprints, DEI systems consulting, and workshop delivery that’s anti-performative and embodied.",
     "detailBody": "Our equity consulting isn’t a checkbox. We partner with teams to operationalize equity into policies, products, and daily practice."
   },
   {
     "slug": "instructional-design",
     "title": "Instructional Design & Learning Systems",
-    "icon": "fa-solid fa-chalkboard-user",
+    "icon": "presentation",
     "summary": "Curriculum builds, eLearning dev, LMS strategy, and UDL-driven experiences for adult learners and staff.",
     "detailBody": "From async courses to live training systems, we craft accessible, effective, and human-centered learning."
   },
   {
     "slug": "systems-integration",
     "title": "Tech, Automation & Systems Integration",
-    "icon": "fa-solid fa-gears",
+    "icon": "settings",
     "summary": "We build low-code tools, streamline ops, automate workflows, and design internal systems that actually help people.",
-    "detailBody": "Your team shouldn’t waste time fighting spreadsheets. We help you design backends that empower — not exhaust."
+    "detailBody": "Your team shouldn't waste time fighting spreadsheets. We help you design backends that empower — not exhaust."
+  },
+  {
+    "slug": "ai-development",
+    "title": "AI Development & Intelligent Systems",
+    "icon": "bot",
+    "summary": "Ethical AI solutions, automation, and intelligent systems designed to enhance human capabilities and organizational efficiency.",
+    "detailBody": "We develop AI systems that respect privacy, promote equity, and genuinely help people work smarter. From custom machine learning models to AI-powered workflows, we ensure technology serves humanity."
   },
   {
     "slug": "drone-ops",
     "title": "Environmental Sensing & Drone Operations",
-    "icon": "fa-solid fa-drone",
-    "summary": "FAA-certified aerial data collection, inspection, mapping, and environmental sensing for infrastructure, planning, or research.",
-    "detailBody": "From real estate to agriculture to environmental justice — our drone workflows are precise, compliant, and creative."
+    "icon": "zap",
+    "summary": "FAA-certified aerial data collection, inspection, mapping, and environmental sensing. Modern, tech-enabled consulting that combines deep site-level expertise with AI-powered analysis.",
+    "detailBody": "From real estate to agriculture to environmental justice — our drone workflows are precise, compliant, and creative. We're modern consultants who combine hands-on field expertise with the power of AI to handle complex research and analysis."
   },
   {
     "slug": "ada-advocacy",
     "title": "ADA Compliance & Disability Advocacy",
-    "icon": "fa-solid fa-wheelchair",
+    "icon": "accessibility",
     "summary": "Audits, advisory, and strategic implementation for accessibility — from web apps to internal culture.",
     "detailBody": "We approach ADA not as a ceiling — but as a floor. We help orgs build real access into their work."
   },
   {
     "slug": "media-narrative",
     "title": "Media & Narrative Systems",
-    "icon": "fa-solid fa-photo-film",
+    "icon": "camera",
     "summary": "We produce mission-aligned media, visual storytelling, and narrative systems that move people and shift power.",
     "detailBody": "Narrative is infrastructure. We help you design it with clarity and intention."
   },
   {
     "slug": "ops-consulting",
     "title": "Business & Ops Consulting",
-    "icon": "fa-solid fa-briefcase",
+    "icon": "briefcase",
     "summary": "Org design, internal documentation, operations audits, and startup scaffolding from day 1 to scale.",
     "detailBody": "Behind every smooth org is thoughtful internal scaffolding. We help you build it."
   },
   {
     "slug": "higher-ed",
     "title": "Higher Ed & International Education Strategy",
-    "icon": "fa-solid fa-graduation-cap",
+    "icon": "graduation-cap",
     "summary": "Admissions design, intercultural systems, international student programs, and academic support frameworks.",
     "detailBody": "We advise institutions and educators on systems that support global learners."
   }

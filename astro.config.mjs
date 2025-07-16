@@ -3,10 +3,14 @@ import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import node from '@astrojs/node';
 
 export default defineConfig({
   site: 'https://astropraxis.cc', // Required for sitemap + SEO
-  output: 'static',
+  output: 'server', // Changed to server to support API routes
+  adapter: node({
+    mode: 'standalone'
+  }),
 
   integrations: [
     tailwind(),

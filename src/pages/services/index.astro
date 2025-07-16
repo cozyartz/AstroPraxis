@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import services from '../../content/services.json';
+import LucideIcon from '../../components/LucideIcon.astro';
 ---
 
 <BaseLayout
@@ -11,29 +12,94 @@ import services from '../../content/services.json';
   keywords="systems strategy, equity consulting, ADA compliance, instructional design, aerial intelligence, drone services, media narrative, disability advocacy, organizational transformation, Michigan consulting"
   type="service"
 >
-  <section class="bg-black text-white py-24 px-6 text-center">
-    <div class="max-w-3xl mx-auto mb-12 space-y-4">
-      <h1 class="text-5xl font-bold">What We Offer</h1>
-      <p class="text-lg text-gray-300">
-        From decision frameworks to scalable automation, we help teams move with clarity.
-      </p>
+  <!-- Hero Section -->
+  <section class="section-modern py-24 lg:py-40 text-center relative overflow-hidden">
+    <div class="absolute inset-0 pattern-dots opacity-20"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="animate-fade-in-up">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-12 holographic">
+          What We Offer
+        </h1>
+        <div class="glass-light rounded-3xl p-10 max-w-5xl mx-auto">
+          <p class="text-xl md:text-2xl text-neutral-700 mb-8 leading-relaxed">
+            Comprehensive solutions designed to transform your systems and amplify your impact through equity-centered practices.
+          </p>
+          <p class="text-lg gradient-text font-bold max-w-3xl mx-auto">
+            From decision frameworks to scalable automation, we help teams move with clarity and purpose.
+          </p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-      {services.map((service) => (
-        <a
-          href={`/services/${service.slug}`}
-          class="group block border border-gray-800 rounded-lg p-6 bg-gradient-to-b from-gray-950 to-black hover:border-indigo-500 transition"
-        >
-          <div class="flex items-center gap-4 mb-4">
-            <i class={`${service.icon} text-indigo-400 text-2xl`} aria-hidden="true"></i>
-            <h2 class="text-xl font-semibold group-hover:text-indigo-400 transition">
-              {service.title}
-            </h2>
-          </div>
-          <p class="text-sm text-gray-400">{service.summary}</p>
-        </a>
-      ))}
+  <!-- Services Grid -->
+  <section class="py-24 bg-white relative overflow-hidden">
+    <div class="absolute inset-0 cyber-grid opacity-5"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {services.map((service, index) => (
+          <a
+            href={`/services/${service.slug}`}
+            class={`card-modern interactive-card group hover-glow animate-fade-in-up`}
+            style={`animation-delay: ${index * 0.15}s;`}
+          >
+            <div class="w-20 h-20 bg-gradient-to-br from-primary-200 to-accent-200 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-125 transition-all duration-500 pulse-orb animate-glow-pulse">
+              <LucideIcon name={service.icon} class="w-10 h-10 text-primary-700 group-hover:text-white transition-all duration-300 relative z-10" />
+            </div>
+            
+            <div class="space-y-4">
+              <h2 class="text-xl font-bold text-neutral-900 group-hover:text-primary-700 transition-colors duration-300">
+                {service.title}
+              </h2>
+              <p class="text-neutral-600 leading-relaxed">
+                {service.summary}
+              </p>
+            </div>
+
+            <div class="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="flex items-center text-primary-600 font-semibold text-sm">
+                <span>Learn more</span>
+                <LucideIcon name="arrow-right" class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="animate-fade-in-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-neutral-900">
+          Ready to Transform Your Systems?
+        </h2>
+        <p class="text-xl text-neutral-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          Let's explore how our services can help you build more equitable, effective, and sustainable systems.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://queerlyqualified.formaloo.me/ejys27"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-accent group hover-glow animate-shine"
+          >
+            <LucideIcon name="message" class="w-5 h-5 mr-3 group-hover:animate-subtle-pulse" />
+            Start the Conversation
+            <LucideIcon name="arrow-right" class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
+          </a>
+          
+          <a
+            href="/"
+            class="btn-secondary group"
+          >
+            <LucideIcon name="home" class="w-5 h-5 mr-3" />
+            Back to Home
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>

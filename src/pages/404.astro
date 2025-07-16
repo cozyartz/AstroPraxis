@@ -1,22 +1,36 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LucideIcon from '../components/LucideIcon.astro';
 ---
 
 <BaseLayout title="Page Not Found">
-  <section class="bg-gradient-to-br from-black via-indigo-900 to-black text-white min-h-screen flex flex-col justify-center items-center px-6 text-center space-y-6">
-    <div class="text-7xl md:text-8xl font-bold">404</div>
-    <p class="text-2xl md:text-3xl">Lost in space...</p>
-    <p class="text-gray-400 max-w-xl">
-      The page you're looking for drifted into another galaxy. But don't worry — you can head home or explore our services.
-    </p>
+  <section class="relative overflow-hidden section-dark-modern min-h-screen flex flex-col justify-center items-center px-6 text-center space-y-8">
+    <!-- Floating particles -->
+    <div class="absolute inset-0 particle-bg opacity-30"></div>
+    
+    <div class="relative z-10 space-y-8 animate-fade-in-up">
+      <div class="text-8xl md:text-9xl font-bold holographic glitch">404</div>
+      <h1 class="text-3xl md:text-4xl font-bold text-white">Lost in the Digital Cosmos</h1>
+      <p class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+        The page you're looking for has drifted into another dimension. But don't worry — you can navigate back to familiar space or explore our stellar services.
+      </p>
 
-    <div class="flex flex-wrap gap-4 justify-center">
-      <a href="/" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-indigo-200 transition">Go Home</a>
-      <a href="/services" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-500 transition">Explore Services</a>
-    </div>
+      <div class="flex flex-wrap gap-6 justify-center pt-8">
+        <a href="/" class="btn-accent group">
+          <LucideIcon name="home" class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
+          Return Home
+        </a>
+        <a href="/services" class="btn-secondary group">
+          <LucideIcon name="rocket" class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
+          Explore Services
+        </a>
+      </div>
 
-    <div class="pt-16 opacity-40 animate-pulse">
-      <i class="fa-solid fa-meteor text-6xl text-indigo-300"></i>
+      <div class="pt-16 opacity-60">
+        <div class="relative pulse-orb w-32 h-32 mx-auto">
+          <LucideIcon name="meteor" class="w-32 h-32 text-primary-400 mx-auto animate-gentle-float" />
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -2,6 +2,7 @@
 // src/pages/services/[slug].astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import services from '../../content/services.json';
+import LucideIcon from '../../components/LucideIcon.astro';
 
 export async function getStaticPaths() {
   return services.map((service) => ({
@@ -17,12 +18,129 @@ if (!service) {
 }
 ---
 
-<BaseLayout title={service.title}>
-  <section class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 px-6 text-center">
-    <div class="max-w-3xl mx-auto space-y-4">
-      <i class={`${service.icon} text-4xl text-indigo-400`} aria-hidden="true"></i>
-      <h1 class="text-3xl font-bold">{service.title}</h1>
-      <p class="text-base text-gray-300">{service.detailBody}</p>
+<BaseLayout title={service.title} description={service.summary}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary-50 via-neutral-50 to-accent-50 py-20 lg:py-32">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <div class="animate-fade-in-up">
+        <div class="w-20 h-20 bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl flex items-center justify-center mx-auto mb-8">
+          <LucideIcon name={service.icon} class="w-12 h-12 text-primary-600" />
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 tracking-tight">
+          {service.title}
+        </h1>
+        <p class="text-xl md:text-2xl text-neutral-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+          {service.summary}
+        </p>
+        <p class="text-lg text-neutral-700 max-w-3xl mx-auto leading-relaxed">
+          {service.detailBody}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Details Section -->
+  <section class="py-20 section-light">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-fade-in-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+            How We Approach This Work
+          </h2>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <LucideIcon name="lightbulb" class="w-5 h-5 text-primary-600" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-neutral-900 mb-2">Strategic Planning</h3>
+                <p class="text-neutral-600">We start by understanding your unique context, challenges, and goals.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <LucideIcon name="users" class="w-5 h-5 text-accent-600" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-neutral-900 mb-2">Collaborative Implementation</h3>
+                <p class="text-neutral-600">We work alongside your team to ensure sustainable, lasting change.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <LucideIcon name="trending-up" class="w-5 h-5 text-emerald-600" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-neutral-900 mb-2">Continuous Support</h3>
+                <p class="text-neutral-600">We provide ongoing guidance to help you maintain and scale your progress.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-feature animate-fade-in-up" style="animation-delay: 0.2s;">
+          <h3 class="text-xl font-bold text-neutral-900 mb-4">Ready to Get Started?</h3>
+          <p class="text-neutral-600 mb-6">
+            Let's explore how this service can transform your organization's approach and impact.
+          </p>
+          <div class="space-y-4">
+            <a
+              href="https://queerlyqualified.formaloo.me/ejys27"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-accent w-full group"
+            >
+              <LucideIcon name="message" class="w-5 h-5 mr-2 group-hover:animate-subtle-pulse" />
+              Start the Conversation
+              <LucideIcon name="arrow-right" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="/services"
+              class="btn-ghost w-full group"
+            >
+              <LucideIcon name="arrow-left" class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+              View All Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+          Related Services
+        </h2>
+        <p class="text-neutral-600 max-w-2xl mx-auto">
+          Explore other ways we can support your organization's growth and transformation
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.filter(s => s.slug !== service.slug).slice(0, 3).map((relatedService, index) => (
+          <article class={`card group hover-lift animate-fade-in-up`} style={`animation-delay: ${index * 0.1}s;`}>
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl flex items-center justify-center mb-4">
+              <LucideIcon name={relatedService.icon} class="w-6 h-6 text-primary-600" />
+            </div>
+            <h3 class="text-lg font-bold text-neutral-900 mb-2 group-hover:text-primary-700 transition-colors">
+              {relatedService.title}
+            </h3>
+            <p class="text-neutral-600 text-sm mb-4 leading-relaxed">
+              {relatedService.summary}
+            </p>
+            <a
+              href={`/services/${relatedService.slug}`}
+              class="text-primary-600 font-semibold text-sm flex items-center group-hover:text-primary-700 transition-colors"
+            >
+              Learn More
+              <LucideIcon name="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>

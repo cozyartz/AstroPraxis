@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingForm from '../components/BookingForm.tsx';
+import LucideIcon from '../components/LucideIcon.astro';
+---
+
+<BaseLayout 
+  title="Book a Consultation | AstroPraxis"
+  description="Schedule a consultation with our expert team. From strategy to implementation, we're here to help you achieve your goals."
+  keywords="consultation, booking, appointment, strategy, consulting, AstroPraxis"
+>
+  <div class="relative overflow-hidden">
+    <!-- Hero Section -->
+    <section class="section-modern py-24 lg:py-40 text-center relative overflow-hidden">
+      <div class="absolute inset-0 pattern-dots opacity-20"></div>
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="animate-fade-in-up">
+          <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold mb-12 holographic">
+            Book Your Consultation
+          </h1>
+          <div class="glass-light rounded-3xl p-10 max-w-4xl mx-auto">
+            <p class="text-xl md:text-2xl text-neutral-700 mb-6 leading-relaxed">
+              Ready to transform your vision into reality? Schedule a consultation with our expert team and let's explore how we can help you achieve your goals.
+            </p>
+            <p class="text-lg gradient-text font-bold">
+              Professional guidance tailored to your unique needs and challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <BookingForm client:load />
+    </div>
+
+    <!-- Features Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+      <div class="absolute inset-0 cyber-grid opacity-5"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16 animate-fade-in-up">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+            What You Get
+          </h2>
+          <p class="text-xl text-neutral-600 max-w-3xl mx-auto">
+            Every consultation is designed to provide maximum value and actionable insights
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="card-modern interactive-card group text-center animate-fade-in-up">
+            <div class="w-20 h-20 bg-gradient-to-br from-primary-200 to-accent-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 pulse-orb">
+              <LucideIcon name="lightbulb" class="w-10 h-10 text-primary-700 group-hover:text-white transition-colors relative z-10" />
+            </div>
+            <h3 class="text-2xl font-bold text-neutral-900 mb-4 group-hover:gradient-text transition-all duration-300">
+              Strategic Insights
+            </h3>
+            <p class="text-neutral-600 leading-relaxed">
+              Get expert guidance tailored to your specific challenges and goals with actionable recommendations.
+            </p>
+          </div>
+          
+          <div class="card-modern interactive-card group text-center animate-fade-in-up" style="animation-delay: 0.2s;">
+            <div class="w-20 h-20 bg-gradient-to-br from-accent-200 to-primary-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 pulse-orb">
+              <LucideIcon name="rocket" class="w-10 h-10 text-accent-700 group-hover:text-white transition-colors relative z-10" />
+            </div>
+            <h3 class="text-2xl font-bold text-neutral-900 mb-4 group-hover:gradient-text transition-all duration-300">
+              Actionable Plan
+            </h3>
+            <p class="text-neutral-600 leading-relaxed">
+              Leave with concrete next steps and a clear roadmap forward that you can implement immediately.
+            </p>
+          </div>
+          
+          <div class="card-modern interactive-card group text-center animate-fade-in-up" style="animation-delay: 0.4s;">
+            <div class="w-20 h-20 bg-gradient-to-br from-emerald-200 to-primary-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 pulse-orb">
+              <LucideIcon name="users" class="w-10 h-10 text-emerald-700 group-hover:text-white transition-colors relative z-10" />
+            </div>
+            <h3 class="text-2xl font-bold text-neutral-900 mb-4 group-hover:gradient-text transition-all duration-300">
+              Ongoing Support
+            </h3>
+            <p class="text-neutral-600 leading-relaxed">
+              Connect with our network and resources for continued success beyond the initial consultation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-16 text-center">
+          <div class="glass-light rounded-2xl p-8 max-w-3xl mx-auto">
+            <h3 class="text-xl font-bold gradient-text mb-4">Secure & Professional</h3>
+            <div class="flex justify-center items-center gap-8 text-sm text-neutral-600">
+              <div class="flex items-center gap-2">
+                <LucideIcon name="shield-check" class="w-5 h-5 text-emerald-500" />
+                <span>Secure Payment</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <LucideIcon name="clock" class="w-5 h-5 text-primary-500" />
+                <span>Flexible Scheduling</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <LucideIcon name="video" class="w-5 h-5 text-accent-500" />
+                <span>Virtual or In-Person</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
