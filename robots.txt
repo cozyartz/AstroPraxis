@@ -1,15 +1,19 @@
 # Allow good search engine crawlers
 User-agent: Googlebot
-Disallow:
+Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
-Disallow:
+Allow: /
+Crawl-delay: 1
 
 User-agent: DuckDuckBot
-Disallow:
+Allow: /
+Crawl-delay: 1
 
 User-agent: Yandex
-Disallow:
+Allow: /
+Crawl-delay: 2
 
 # Block AI crawlers
 User-agent: GPTBot
@@ -35,10 +39,18 @@ Disallow: /
 
 # Allow other search engines
 User-agent: *
+Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
 Disallow: /*.config.*$
+Disallow: /api/
+Disallow: /_astro/
+Crawl-delay: 2
 
-# Sitemap
+# Sitemaps
 Sitemap: https://astropraxis.cc/sitemap.xml
+Sitemap: https://astropraxis.cc/sitemap-index.xml
+
+# Domain relationships
+# Related domains: https://andreacozart.me, https://amylundin.me

@@ -3,6 +3,15 @@
   { "label": "About", "href": "/about" },
   { "label": "Services", "href": "/services" },
   { "label": "Case Studies", "href": "/case-studies" },
+  { 
+    "label": "Team", 
+    "href": "#",
+    "children": [
+      { "label": "About Our Team", "href": "/about" },
+      { "label": "Andrea Cozart", "href": "https://andreacozart.me", "external": true },
+      { "label": "Amy Lundin", "href": "https://amylundin.me", "external": true }
+    ]
+  },
   { "label": "Own Your Power", "href": "/own" },
   { "label": "Book Consultation", "href": "/book-consultation" },
   { "label": "Contact", "href": "/contact" }

@@ -51,6 +51,20 @@ const {
   {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
   <meta property="article:author" content={author} />
 
+  <!-- Cross-domain connections -->
+  <link rel="me" href="https://andreacozart.me" />
+  <link rel="me" href="https://amylundin.me" />
+  <meta name="team:andrea" content="Andrea Cozart - https://andreacozart.me" />
+  <meta name="team:amy" content="Amy Lundin - https://amylundin.me" />
+
+  <!-- Enhanced SEO -->
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="msapplication-TileColor" content="#0ea5e9" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@astropraxis" />
@@ -89,13 +103,32 @@ const {
           availableLanguage: "en"
         },
         sameAs: [
-          "https://astropraxis.cc"
+          "https://astropraxis.cc",
+          "https://andreacozart.me",
+          "https://amylundin.me"
+        ],
+        member: [
+          {
+            "@type": "Person",
+            name: "Andrea Cozart",
+            url: "https://andreacozart.me",
+            jobTitle: "Systems Strategy & Equity Consulting",
+            sameAs: "https://andreacozart.me"
+          },
+          {
+            "@type": "Person",
+            name: "Amy Lundin", 
+            url: "https://amylundin.me",
+            jobTitle: "AI Development & Instructional Design",
+            sameAs: "https://amylundin.me"
+          }
         ],
         serviceArea: {
           "@type": "State",
           name: "Michigan"
         },
-        areaServed: "US",
+        areaServed: ["US", "Michigan", "Battle Creek"],
+        priceRange: "$$",
         knowsAbout: [
           "Equity Consulting",
           "Systems Strategy",
