@@ -1,3 +1,7 @@
+---
+import Icon from "./Icon.astro";
+---
+
 <footer class="relative overflow-hidden mesh-bg border-t border-white/20 py-16">
   <div class="absolute inset-0 opacity-10">
     <div class="absolute inset-0 cyber-grid"></div>
@@ -40,9 +44,7 @@
               <p class="font-semibold text-neutral-900 group-hover:text-primary-600">Andrea Cozart</p>
               <p class="text-xs text-neutral-600">Systems Strategy</p>
             </div>
-            <svg class="w-4 h-4 text-neutral-400 group-hover:text-primary-600 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-            </svg>
+            <Icon name="external-link" size={16} class="text-neutral-400 group-hover:text-primary-600 ml-auto" />
           </a>
           
           <a href="https://amylundin.me" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 glass-card p-3 rounded-lg hover:scale-105 transition-all duration-300 group">
@@ -53,9 +55,7 @@
               <p class="font-semibold text-neutral-900 group-hover:text-accent-600">Amy Lundin</p>
               <p class="text-xs text-neutral-600">AI & Design</p>
             </div>
-            <svg class="w-4 h-4 text-neutral-400 group-hover:text-accent-600 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-            </svg>
+            <Icon name="external-link" size={16} class="text-neutral-400 group-hover:text-accent-600 ml-auto" />
           </a>
         </div>
       </div>

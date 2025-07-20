@@ -12,7 +12,6 @@
     "@astrojs/react": "^4.2.7",
     "@astrojs/sitemap": "^3.4.0",
     "@astrojs/tailwind": "^5.1.5",
-    "@awesome.me/kit-8a91e67263": "^1.0.25",
     "@hookform/resolvers": "^5.1.1",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/react": "^19.1.4",

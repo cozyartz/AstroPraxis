@@ -1,6 +1,7 @@
 // === 4. components/AnimatedServiceCard.tsx ===
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
+import LucideIcon from './LucideIcon';
 
 interface Props {
   icon: string;
@@ -19,7 +20,7 @@ const AnimatedServiceCard: FC<Props> = ({ icon, title, desc, href }) => (
     className="block bg-gray-900 border border-indigo-700 rounded-xl p-6 shadow-md hover:shadow-xl transition text-left"
   >
     <div className="flex items-center gap-3 mb-3">
-      <i className={`${icon} text-2xl text-indigo-400`} aria-hidden="true"></i>
+      <LucideIcon name={icon} size={24} className="text-indigo-400" />
       <h3 className="text-lg font-semibold text-white group-hover:text-white">{title}</h3>
     </div>
     <p className="text-sm text-gray-300 group-hover:text-gray-100">{desc}</p>

@@ -1,0 +1,21 @@
+---
+export interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+  strokeWidth?: number;
+}
+
+const { name, size = 24, class: className = "", strokeWidth = 2 } = Astro.props;
+
+// Import the React component
+import LucideIcon from './LucideIcon';
+---
+
+<LucideIcon 
+  name={name} 
+  size={size} 
+  className={className} 
+  strokeWidth={strokeWidth} 
+  client:load 
+/>
