@@ -2,6 +2,8 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+export const prerender = true;
+
 // 1. Static paths from the "case-studies" collection
 export async function getStaticPaths() {
   const caseStudies = await getCollection('case-studies');
