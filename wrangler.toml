@@ -2,10 +2,6 @@ name = "astropraxis"
 compatibility_date = "2025-06-01"
 pages_build_output_dir = "./dist"
 
-# Performance optimizations
-[build]
-command = "npm run build"
-
 # Environment variables for SEO
 [vars]
 SITE_URL = "https://astropraxis.cc"
