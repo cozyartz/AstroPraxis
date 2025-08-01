@@ -1,0 +1,139 @@
+{
+  "company": {
+    "name": "AstroPraxis Consulting",
+    "tagline": "Strategy for Systems That Actually Work",
+    "mission": "We help people transform the structures they are in and build the ones they need.",
+    "description": "Women-owned, queer-led consultancy specializing in equity-centered systems transformation, AI development, ADA compliance, and inclusive design.",
+    "location": "Battle Creek, Michigan",
+    "service_area": "Nationwide (remote-first)",
+    "values": ["Women-owned", "Queer-led", "ADA-focused", "Equity-centered", "Remote-first", "Collaborative"],
+    "website": "https://astropraxis.cc",
+    "deployment": "Deployed on Cloudflare Pages"
+  },
+  "team": [
+    {
+      "name": "Andrea Cozart Lundin",
+      "role": "Creative Director & Spatial Strategist",
+      "bio": "FAA-certified drone pilot, multimedia strategist, and narrative systems thinker. Andrea leads creative direction across visual storytelling, site-based media, and spatial impact design.",
+      "expertise": ["drone operations", "spatial analysis", "multimedia strategy", "narrative systems", "creative direction"]
+    },
+    {
+      "name": "Amy Cozart Lundin",
+      "role": "Learning Architect & Accessibility Designer",
+      "bio": "Instructional designer and accessibility nerd. Amy builds inclusive learning systems and leads strategic training for organizations rethinking how people grow.",
+      "expertise": ["instructional design", "accessibility", "inclusive learning", "strategic training", "organizational development"]
+    },
+    {
+      "name": "Kyla Kremhelmer",
+      "role": "Rehabilitation & Disability Consultant",
+      "bio": "Kyla works at the intersection of rehabilitation, trauma-informed practice, and accessibility, helping clients navigate complex systems with clarity and support.",
+      "expertise": ["rehabilitation", "trauma-informed practice", "disability advocacy", "complex systems navigation"]
+    },
+    {
+      "name": "Nicole Hoffman",
+      "role": "International Education Advisor",
+      "bio": "Nicole brings global education systems expertise, admissions design, and intercultural knowledge to international student engagement and institutional strategy.",
+      "expertise": ["international education", "admissions design", "intercultural competency", "institutional strategy"]
+    },
+    {
+      "name": "Rebecca Judkins",
+      "role": "Instructional Designer & Technical Writer",
+      "bio": "Rebecca turns complex information into accessible, inclusive, and well-structured content. Her work bridges technical clarity and human connection.",
+      "expertise": ["technical writing", "instructional design", "content accessibility", "complex information design"]
+    }
+  ],
+  "services": [
+    {
+      "name": "Organizational Strategy & Facilitation",
+      "description": "Strategic planning, decision-making frameworks, retreat design, and trauma-informed facilitation for complex teams.",
+      "details": "We help teams work through complexity. Our facilitation practices are grounded in trauma-informed care, equity principles, and clarity-driven decision frameworks."
+    },
+    {
+      "name": "Equity & Access Consulting",
+      "description": "Policy audits, inclusive design sprints, DEI systems consulting, and workshop delivery that's anti-performative and embodied.",
+      "details": "Our equity consulting isn't a checkbox. We partner with teams to operationalize equity into policies, products, and daily practice."
+    },
+    {
+      "name": "Instructional Design & Learning Systems",
+      "description": "Curriculum builds, eLearning dev, LMS strategy, and UDL-driven experiences for adult learners and staff.",
+      "details": "From async courses to live training systems, we craft accessible, effective, and human-centered learning."
+    },
+    {
+      "name": "Tech, Automation & Systems Integration",
+      "description": "We build low-code tools, streamline ops, automate workflows, and design internal systems that actually help people.",
+      "details": "Your team shouldn't waste time fighting spreadsheets. We help you design backends that empower — not exhaust."
+    },
+    {
+      "name": "AI Development & Intelligent Systems",
+      "description": "Ethical AI solutions, automation, and intelligent systems designed to enhance human capabilities and organizational efficiency.",
+      "details": "We develop AI systems that respect privacy, promote equity, and genuinely help people work smarter. From custom machine learning models to AI-powered workflows, we ensure technology serves humanity."
+    },
+    {
+      "name": "Environmental Sensing & Drone Operations",
+      "description": "FAA-certified aerial data collection, inspection, mapping, and environmental sensing. Modern, tech-enabled consulting that combines deep site-level expertise with AI-powered analysis.",
+      "details": "From real estate to agriculture to environmental justice — our drone workflows are precise, compliant, and creative. We're modern consultants who combine hands-on field expertise with the power of AI to handle complex research and analysis."
+    },
+    {
+      "name": "ADA Compliance & Disability Advocacy",
+      "description": "Audits, advisory, and strategic implementation for accessibility — from web apps to internal culture.",
+      "details": "We approach ADA not as a ceiling — but as a floor. We help orgs build real access into their work."
+    },
+    {
+      "name": "Media & Narrative Strategy",
+      "description": "Story strategy, content creation, and campaign development for mission-driven organizations.",
+      "details": "We help organizations tell their stories with integrity and impact, creating narrative strategies that authentically connect with communities."
+    }
+  ],
+  "case_studies": [
+    {
+      "title": "Designing a Trauma-Informed Onboarding Flow",
+      "description": "Rethinking employee onboarding as a process of care, clarity, and consent — not coercion.",
+      "focus": "Creating onboarding processes that are safe and welcoming for people with trauma histories, disabilities, or marginalized identities.",
+      "principles": ["Consent-first", "Transparent power", "Predictable pacing", "Multiple modes", "Ongoing welcome"],
+      "outcomes": "Transformed onboarding from compliance-focused to care-centered, improving employee retention and psychological safety."
+    },
+    {
+      "title": "Access-First Course Design Audit",
+      "description": "A practical approach to evaluating and enhancing course accessibility using WCAG and UDL principles.",
+      "focus": "Making learning environments accessible and inclusive for all learners, especially those who are often excluded.",
+      "frameworks": ["WCAG (Web Content Accessibility Guidelines)", "UDL (Universal Design for Learning)"],
+      "outcomes": "Improved course accessibility and created more flexible learning pathways for diverse learners."
+    },
+    {
+      "title": "Global Mobility & Equity Framework",
+      "description": "Building equitable international student support systems.",
+      "focus": "Addressing systemic barriers in international education and creating more inclusive mobility programs.",
+      "outcomes": "Developed comprehensive framework for supporting international students with attention to equity and cultural responsiveness."
+    },
+    {
+      "title": "Environmental Harm Assessment via Drone Technology",
+      "description": "Using aerial intelligence for environmental justice documentation.",
+      "focus": "Combining drone technology with AI analysis to document environmental impacts and support community advocacy.",
+      "outcomes": "Provided data-driven evidence for environmental justice initiatives using cutting-edge aerial sensing technology."
+    }
+  ],
+  "specialties": [
+    "Trauma-informed organizational design",
+    "Accessibility audits and ADA compliance",
+    "Equity-centered systems transformation",
+    "AI development with ethical frameworks",
+    "Drone operations for environmental and social impact",
+    "Instructional design with Universal Design for Learning",
+    "Anti-oppressive facilitation practices",
+    "Systems integration and workflow automation",
+    "Inclusive hiring and onboarding processes",
+    "Policy development for equitable organizations"
+  ],
+  "approach": {
+    "philosophy": "We design systems that expect harm has happened and work to interrupt it. Our work is grounded in trauma-informed care, equity principles, and clarity-driven frameworks.",
+    "methods": ["Trauma-informed practice", "Universal Design principles", "Participatory design", "Anti-oppressive facilitation", "Evidence-based approaches"],
+    "commitment": "We will meet you with care and possibility. Our work is anti-performative and focused on operationalizing equity into daily practice."
+  },
+  "contact": {
+    "primary_contact": "https://queerlyqualified.formaloo.me/ejys27",
+    "phone": "269.222.4330",
+    "email": "hello@astropraxis.cc",
+    "consultation_booking": "/book-consultation",
+    "response_time": "We respond within 2-3 business days"
+  }
+}

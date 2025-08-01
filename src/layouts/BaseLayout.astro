@@ -3,6 +3,7 @@ const { title = "AstroPraxis", description, ogImage, keywords, type, author, pub
 import SeoMeta from "../components/SeoMeta.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ChatBot from "../components/ChatBot.tsx";
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -19,5 +20,6 @@ import Footer from "../components/Footer.astro";
       <slot />
     </main>
     <Footer />
+    <ChatBot client:load />
   </body>
 </html>

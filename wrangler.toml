@@ -8,6 +8,10 @@ SITE_URL = "https://astropraxis.cc"
 TEAM_ANDREA_URL = "https://andreacozart.me"
 TEAM_AMY_URL = "https://amylundin.me"
 
+# AI binding for chatbot
+[ai]
+binding = "AI"
+
 # Headers for better SEO and security
 [[headers]]
 for = "/*"
