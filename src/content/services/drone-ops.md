@@ -1,8 +1,8 @@
 ---
 title: "Environmental Sensing & Drone Operations"
 slug: "drone-ops"
-icon: "fa-solid fa-helicopter"
-desc: "FAA-certified aerial data collection, inspection, mapping, and environmental sensing for infrastructure, planning, or research. Modern, tech-enabled consulting that combines deep site-level expertise with AI-powered analysis."
+icon: "zap"
+desc: "FAA-certified aerial data collection, inspection, mapping, and environmental sensing. Modern, tech-enabled consulting that combines deep site-level expertise with AI-powered analysis."
 detailBody: "From real estate to agriculture to environmental justice — our drone workflows are precise, compliant, and creative. We're modern consultants who combine hands-on field expertise with the power of AI to handle complex research and analysis."
 ---
 

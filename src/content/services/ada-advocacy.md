@@ -1,9 +1,9 @@
 ---
 title: "ADA Compliance & Disability Advocacy"
 slug: "ada-advocacy"
-icon: "fa-solid fa-wheelchair"
-desc: "Audits, advisory, and strategic implementation for accessibility — from web apps to internal culture. Informed by lived experience and policy fluency."
-detailBody: "We approach ADA not as a ceiling — but as a floor. We help orgs build real access into their work. Whether it’s digital accessibility, inclusive policy design, or auditing internal tools, our approach is guided by both compliance and compassion."
+icon: "accessibility"
+desc: "Audits, advisory, and strategic implementation for accessibility — from web apps to internal culture."
+detailBody: "We approach ADA not as a ceiling — but as a floor. We help orgs build real access into their work."
 ---
 
 We bring deep experience in:

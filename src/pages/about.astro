@@ -4,20 +4,44 @@ import LucideIcon from '../components/LucideIcon.astro';
 
 const team = [
   {
-    name: "Andrea Cozart",
-    role: "Systems Strategy & Equity Consulting",
-    bio: "Leading transformative systems change through equity-centered approaches and strategic frameworks.",
+    name: "Andrea Cozart Lundin",
+    role: "Creative Director & Spatial Strategist",
+    bio: "FAA-certified drone pilot, multimedia strategist, and narrative systems thinker. Andrea leads creative direction across visual storytelling, site-based media, and spatial impact design.",
     website: "https://andreacozart.me",
     image: "/images/andrea.webp",
-    skills: ["Systems Strategy", "Equity Consulting", "Organizational Transformation", "Strategic Planning"]
+    skills: ["Drone Operations", "Spatial Analysis", "Multimedia Strategy", "Narrative Systems", "Creative Direction"]
   },
   {
-    name: "Amy Lundin", 
-    role: "AI Development & Instructional Design",
-    bio: "Building ethical AI solutions and inclusive learning systems that enhance human capabilities.",
+    name: "Amy Cozart Lundin", 
+    role: "Learning Architect & Accessibility Designer",
+    bio: "Instructional designer and accessibility nerd. Amy builds inclusive learning systems and leads strategic training for organizations rethinking how people grow.",
     website: "https://amylundin.me",
     image: "/images/amy.webp", 
-    skills: ["AI Development", "Instructional Design", "Technology Integration", "Accessibility"]
+    skills: ["Instructional Design", "Accessibility", "Inclusive Learning", "Strategic Training", "Organizational Development"]
+  },
+  {
+    name: "Kyla Kremhelmer",
+    role: "Rehabilitation & Disability Consultant",
+    bio: "Kyla works at the intersection of rehabilitation, trauma-informed practice, and accessibility, helping clients navigate complex systems with clarity and support.",
+    website: "#",
+    image: "/images/kyla.webp",
+    skills: ["Rehabilitation", "Trauma-Informed Practice", "Disability Advocacy", "Complex Systems Navigation"]
+  },
+  {
+    name: "Nicole Hoffman",
+    role: "International Education Advisor",
+    bio: "Nicole brings global education systems expertise, admissions design, and intercultural knowledge to international student engagement and institutional strategy.",
+    website: "#",
+    image: "/images/nicole.webp",
+    skills: ["International Education", "Admissions Design", "Intercultural Competency", "Institutional Strategy"]
+  },
+  {
+    name: "Rebecca Judkins",
+    role: "Instructional Designer & Technical Writer",
+    bio: "Rebecca turns complex information into accessible, inclusive, and well-structured content. Her work bridges technical clarity and human connection.",
+    website: "#",
+    image: "/images/rebecca.webp",
+    skills: ["Technical Writing", "Instructional Design", "Content Accessibility", "Complex Information Design"]
   }
 ];
 ---
@@ -28,14 +52,10 @@ const team = [
   keywords="about AstroPraxis, team, Andrea Cozart, Amy Lundin, women-owned consulting, queer-led business, equity consulting team, systems transformation experts"
 >
   <!-- HERO SECTION -->
-  <section class="relative overflow-hidden mesh-bg py-20 lg:py-32">
-    <div class="absolute inset-0 opacity-20">
-      <div class="absolute inset-0 cyber-grid"></div>
-    </div>
-    
-    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-      <div class="animate-fade-in-up">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 hologram-text cosmic-float" data-text="Building Systems That Work">
+  <section class="relative bg-gray-50 py-20 lg:py-32">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-gray-900">
           Building Systems That Work
         </h1>
         
@@ -47,11 +67,9 @@ const team = [
   </section>
 
   <!-- TEAM SECTION -->
-  <section class="py-20 lg:py-32 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-white via-primary-50 to-accent-50 opacity-80"></div>
-    
-    <div class="relative max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 animate-fade-in-up">
+  <section class="py-20 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold mb-6 text-neutral-900">
           Meet Our Team
         </h2>
@@ -60,45 +78,49 @@ const team = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {team.map((member, index) => (
-          <div class={`glass-ultra rounded-3xl p-8 magnetic-hover tilt-hover animate-fade-in-up`} style={`animation-delay: ${index * 0.2}s;`}>
+          <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-200 border border-gray-200">
             <div class="flex flex-col items-center text-center space-y-6">
               <!-- Profile Image -->
               <div class="relative">
-                <div class="w-32 h-32 rounded-full overflow-hidden ring-4 ring-primary-200 shadow-2xl">
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-200 shadow-lg">
                   <img src={member.image} alt={member.name} class="w-full h-full object-cover" />
                 </div>
-                <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-primary-400 to-accent-400 rounded-full flex items-center justify-center shadow-lg">
-                  <LucideIcon name="external-link" class="w-5 h-5 text-white" />
-                </div>
+                {member.website !== "#" && (
+                  <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-md">
+                    <LucideIcon name="external-link" class="w-4 h-4 text-white" />
+                  </div>
+                )}
               </div>
 
               <!-- Content -->
               <div class="space-y-4">
                 <div>
-                  <h3 class="text-2xl font-bold text-neutral-900 mb-2">{member.name}</h3>
-                  <p class="text-lg font-semibold text-primary-600 mb-3">{member.role}</p>
-                  <p class="text-neutral-600 leading-relaxed">{member.bio}</p>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                  <p class="text-lg font-semibold text-blue-600 mb-3">{member.role}</p>
+                  <p class="text-gray-600 leading-relaxed">{member.bio}</p>
                 </div>
 
                 <!-- Skills -->
                 <div class="flex flex-wrap gap-2 justify-center">
                   {member.skills.map((skill) => (
-                    <span class="badge badge-primary text-xs glass-card">{skill}</span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200">{skill}</span>
                   ))}
                 </div>
 
                 <!-- Website Link -->
-                <a 
-                  href={member.website} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 btn-primary hover-glow animate-shine"
-                >
-                  <span>Visit Website</span>
-                  <LucideIcon name="arrow-right" class="w-4 h-4" />
-                </a>
+                {member.website !== "#" && (
+                  <a 
+                    href={member.website} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                  >
+                    <span>Visit Website</span>
+                    <LucideIcon name="arrow-right" class="w-4 h-4" />
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -108,16 +130,16 @@ const team = [
   </section>
 
   <!-- MISSION SECTION -->
-  <section class="py-20 lg:py-32 section-primary">
+  <section class="py-20 lg:py-32 bg-blue-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <!-- Content -->
-        <div class="animate-fade-in-up">
-          <h2 class="text-4xl md:text-5xl font-bold mb-8 text-neutral-900">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900">
             Our Mission
           </h2>
           
-          <div class="space-y-6 text-lg text-neutral-700 leading-relaxed">
+          <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
             <p>
               We believe that every system can be transformed to work better for the people within it. Our approach centers equity, accessibility, and human dignity in everything we do.
             </p>
@@ -132,28 +154,28 @@ const team = [
           </div>
 
           <div class="mt-10 flex flex-wrap gap-4">
-            <div class="flex items-center gap-3 badge badge-primary glass-card">
-              <LucideIcon name="users" class="w-6 h-6 text-primary-600" />
-              <span class="font-semibold">Women-Owned</span>
+            <div class="flex items-center gap-3 px-4 py-2 bg-blue-100 text-blue-800 rounded-full border border-blue-200">
+              <LucideIcon name="users" class="w-5 h-5 text-blue-600" />
+              <span class="font-semibold text-sm">Women-Owned</span>
             </div>
-            <div class="flex items-center gap-3 badge badge-accent glass-card">
-              <LucideIcon name="heart" class="w-6 h-6 text-accent-600" />
-              <span class="font-semibold">Queer-Led</span>
+            <div class="flex items-center gap-3 px-4 py-2 bg-purple-100 text-purple-800 rounded-full border border-purple-200">
+              <LucideIcon name="heart" class="w-5 h-5 text-purple-600" />
+              <span class="font-semibold text-sm">Queer-Led</span>
             </div>
-            <div class="flex items-center gap-3 badge badge-success glass-card">
-              <LucideIcon name="accessibility" class="w-6 h-6 text-emerald-600" />
-              <span class="font-semibold">Equity-Centered</span>
+            <div class="flex items-center gap-3 px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full border border-emerald-200">
+              <LucideIcon name="accessibility" class="w-5 h-5 text-emerald-600" />
+              <span class="font-semibold text-sm">Equity-Centered</span>
             </div>
           </div>
         </div>
 
         <!-- Visual Element -->
-        <div class="animate-fade-in-up" style="animation-delay: 0.2s;">
-          <div class="glass-ultra rounded-3xl p-12 text-center cosmic-float">
+        <div>
+          <div class="bg-white rounded-xl p-12 text-center shadow-md border border-gray-200">
             <div class="space-y-8">
-              <div class="text-6xl hologram-text" data-text="∞">∞</div>
-              <h3 class="text-2xl font-bold text-neutral-900">Infinite Possibilities</h3>
-              <p class="text-neutral-600 leading-relaxed">
+              <div class="text-6xl text-blue-600 font-bold">∞</div>
+              <h3 class="text-2xl font-bold text-gray-900">Infinite Possibilities</h3>
+              <p class="text-gray-600 leading-relaxed">
                 Every challenge is an opportunity to build something better. We help you see and create new possibilities.
               </p>
             </div>
@@ -164,35 +186,35 @@ const team = [
   </section>
 
   <!-- CTA SECTION -->
-  <section class="py-20 lg:py-32 relative overflow-hidden mesh-bg">
+  <section class="py-20 lg:py-32 bg-gray-50">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <div class="animate-fade-in-up">
-        <h2 class="text-4xl md:text-5xl font-bold mb-8 text-neutral-900">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900">
           Ready to Transform Your Systems?
         </h2>
         
-        <p class="text-xl md:text-2xl text-neutral-700 mb-12 leading-relaxed max-w-4xl mx-auto">
+        <p class="text-xl md:text-2xl text-gray-700 mb-12 leading-relaxed max-w-4xl mx-auto">
           Let's explore how we can help you build systems that actually work for everyone.
         </p>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style="animation-delay: 0.2s;">
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
         <a
           href="https://queerlyqualified.formaloo.me/ejys27"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn-accent group hover-glow animate-shine"
+          class="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
         >
-          <LucideIcon name="message" class="w-5 h-5 mr-3 group-hover:animate-subtle-pulse" />
+          <LucideIcon name="message" class="w-5 h-5 mr-3" />
           Start the Conversation
-          <LucideIcon name="arrow-right" class="w-4 h-4 ml-3 group-hover:translate-x-1 transition-transform" />
+          <LucideIcon name="arrow-right" class="w-4 h-4 ml-3" />
         </a>
 
         <a
           href="/services"
-          class="btn-secondary group"
+          class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg border border-blue-600 hover:bg-blue-50 transition-colors duration-200"
         >
-          <LucideIcon name="eye" class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
+          <LucideIcon name="eye" class="w-5 h-5 mr-3" />
           View Our Services
         </a>
       </div>

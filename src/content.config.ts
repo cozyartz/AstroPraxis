@@ -11,18 +11,6 @@ const caseStudies = defineCollection({
   }),
 });
 
-const services = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    slug: z.string(),
-    icon: z.string(),
-    desc: z.string(),
-    detailBody: z.string(),
-  }),
-});
-
 export const collections = {
   'case-studies': caseStudies,
-  services,
 };
