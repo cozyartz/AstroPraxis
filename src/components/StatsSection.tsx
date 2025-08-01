@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 
 const stats = [
   {
@@ -38,17 +36,17 @@ function AnimatedNumber({
   target, 
   suffix = '', 
   isInfinity = false, 
-  inView 
+  isVisible 
 }: { 
   target: number; 
   suffix?: string; 
   isInfinity?: boolean; 
-  inView: boolean; 
+  isVisible: boolean; 
 }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!inView || isInfinity) return;
+    if (!isVisible || isInfinity) return;
 
     const increment = target / 50;
     const timer = setInterval(() => {
@@ -63,24 +61,13 @@ function AnimatedNumber({
     }, 30);
 
     return () => clearInterval(timer);
-  }, [target, inView, isInfinity]);
+  }, [target, isVisible, isInfinity]);
 
   if (isInfinity) {
     return (
-      <motion.span
-        className="text-6xl font-bold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent"
-        animate={inView ? { 
-          scale: [1, 1.1, 1],
-          rotate: [0, 5, -5, 0]
-        } : {}}
-        transition={{ 
-          duration: 2, 
-          repeat: Infinity,
-          repeatDelay: 3
-        }}
-      >
+      <span className="text-6xl font-bold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent animate-subtle-pulse">
         ∞
-      </motion.span>
+      </span>
     );
   }
 
@@ -92,67 +79,39 @@ function AnimatedNumber({
 }
 
 export default function StatsSection() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, threshold: 0.3 });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-10 left-10 w-32 h-32 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-10 right-10 w-32 h-32 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
-          animate={{
-            x: [0, -50, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-gentle-float" />
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-gentle-float" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-6">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
             Impact by the Numbers
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Measuring success through meaningful transformation and lasting change
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <motion.div
+            <div
               key={stat.label}
-              className="text-center group"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className={`text-center group transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${index * 200 + 300}ms` }}
             >
-              <motion.div 
-                className="relative inline-block mb-4"
-                whileHover={{ scale: 1.05 }}
-              >
+              <div className="relative inline-block mb-4 hover:scale-105 transition-transform duration-300">
                 {/* Glowing background */}
                 <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} rounded-2xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-300`} />
                 
@@ -163,7 +122,7 @@ export default function StatsSection() {
                       target={stat.number} 
                       suffix={stat.suffix} 
                       isInfinity={stat.isInfinity}
-                      inView={inView}
+                      isVisible={isVisible}
                     />
                   </div>
                   
@@ -176,47 +135,30 @@ export default function StatsSection() {
                   </p>
 
                   {/* Decorative elements */}
-                  <motion.div 
-                    className={`absolute top-2 right-2 w-3 h-3 bg-gradient-to-r ${stat.color} rounded-full opacity-60`}
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      opacity: [0.6, 0.8, 0.6]
-                    }}
-                    transition={{ 
-                      duration: 2, 
-                      repeat: Infinity,
-                      delay: index * 0.3
-                    }}
-                  />
+                  <div className={`absolute top-2 right-2 w-3 h-3 bg-gradient-to-r ${stat.color} rounded-full opacity-60 animate-subtle-pulse`} style={{ animationDelay: `${index * 300}ms` }} />
                 </div>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           ))}
         </div>
 
         {/* Bottom message */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 1 }}
-        >
+        <div className={`text-center mt-16 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           <div className="inline-block bg-white rounded-2xl px-8 py-4 shadow-lg border border-gray-200">
             <p className="text-gray-700 font-medium">
               Ready to add your organization to these numbers?
             </p>
-            <motion.a
+            <a
               href="/contact"
-              className="inline-flex items-center mt-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
-              whileHover={{ x: 5 }}
+              className="inline-flex items-center mt-2 text-blue-600 font-semibold hover:text-blue-700 transition-all duration-300 hover:translate-x-1"
             >
               Let's start the conversation
               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </motion.a>
+            </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
